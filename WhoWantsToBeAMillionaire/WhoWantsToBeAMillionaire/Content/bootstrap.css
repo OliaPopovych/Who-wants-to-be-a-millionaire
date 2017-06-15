@@ -61,7 +61,7 @@ html {
 
 body {
     margin: 0;
-    background-image: url("Millionaire_Background.png");
+    background-image: url("Images/Millionaire_Background.png");
     background-position: left top;
 }
 
@@ -176,6 +176,7 @@ button,
 input {
     line-height: normal;
 }
+
 
 button,
 select {
@@ -812,6 +813,7 @@ pre {
     }
 
 .row {
+    /*display:none !important; Hiding class "row"*/
     margin-right: -15px;
     margin-left: -15px;
     color: white;
@@ -1326,6 +1328,9 @@ pre {
 
     .col-md-offset-2 {
         margin-left: 16.666666666666664%;
+        margin-top:5%;
+        /*background-image:url("Images/Millionaire_Background.png")*/
+
     }
 
     .col-md-offset-3 {
@@ -2182,7 +2187,7 @@ textarea.input-lg {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: normal;
     line-height: 1.428571429;
     text-align: center;
@@ -2190,7 +2195,7 @@ textarea.input-lg {
     vertical-align: middle;
     cursor: pointer;
     border: 1px solid transparent;
-    border-radius: 4px;
+    border-radius:8em/2em ;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -2230,9 +2235,12 @@ textarea.input-lg {
     }
 
 .btn-default {
-    color: #333333;
-    background-color: #ffffff;
+    color: #ffffff;
+    background-color: black;
     border-color: #cccccc;
+    border: 3px solid #2a6496;
+    /*border-color:cornflowerblue;*/
+    width:40%;
 }
 
     .btn-default:hover,
@@ -2241,7 +2249,8 @@ textarea.input-lg {
     .btn-default.active,
     .open .dropdown-toggle.btn-default {
         color: #333333;
-        background-color: #ebebeb;
+        /*background-color: #ebebeb;*/
+        background-color: darkorange;
         border-color: #adadad;
     }
 
@@ -5132,6 +5141,7 @@ a.list-group-item.active > .badge,
 }
 
 .jumbotron {
+    /*display:none !important; Hiding class "Jumbotron"*/
     padding: 30px;
     margin-bottom: 30px;
     font-size: 21px;
@@ -5139,7 +5149,7 @@ a.list-group-item.active > .badge,
     line-height: 2.1428571435;
     color: inherit;
     /*background-color: #eeeeee;*/
-    background-image: url("millionaire01.jpg");
+    background-image: url("Images/millionaire01.jpg");
     background-repeat: round;
 }
 

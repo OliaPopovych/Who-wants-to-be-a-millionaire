@@ -62,6 +62,10 @@ C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionair
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\Microsoft.AI.Web.xml
-C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csprojResolveAssemblyReference.cache
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.dll
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.pdb
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\EntityFramework.dll
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\EntityFramework.SqlServer.dll
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\EntityFramework.xml
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\EntityFramework.SqlServer.xml
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csprojResolveAssemblyReference.cache
