@@ -11,10 +11,11 @@ namespace WhoWantsToBeAMillionaire.Models
         [Key]
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Email is required")]
+        [RegularExpression(@"^([\w-\.]+)@((\[[0-9]{1,3]\.)|(([\w-]+\.)+))([a-zA-Z{2,4}|[0-9]{1,3})(\]?)$", ErrorMessage = "Please enter valid email.")]
         public string Email { get; set; }
     }
 }

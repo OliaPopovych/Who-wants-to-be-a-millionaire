@@ -1328,9 +1328,8 @@ pre {
 
     .col-md-offset-2 {
         margin-left: 16.666666666666664%;
-        margin-top:5%;
+        margin-top: 5%;
         /*background-image:url("Images/Millionaire_Background.png")*/
-
     }
 
     .col-md-offset-3 {
@@ -2195,7 +2194,7 @@ textarea.input-lg {
     vertical-align: middle;
     cursor: pointer;
     border: 1px solid transparent;
-    border-radius:8em/2em ;
+    border-radius: 8em/2em;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -2240,7 +2239,8 @@ textarea.input-lg {
     border-color: #cccccc;
     border: 3px solid #2a6496;
     /*border-color:cornflowerblue;*/
-    width:40%;
+    width: 50%;
+    font-weight: bold;
 }
 
     .btn-default:hover,
@@ -2248,7 +2248,7 @@ textarea.input-lg {
     .btn-default:active,
     .btn-default.active,
     .open .dropdown-toggle.btn-default {
-        color: #333333;
+        color: white;
         /*background-color: #ebebeb;*/
         background-color: darkorange;
         border-color: #adadad;

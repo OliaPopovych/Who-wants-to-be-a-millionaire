@@ -9,20 +9,33 @@ namespace WhoWantsToBeAMillionaire.Controllers
 {
     public class UserController : Controller
     {
-        // GET: User
+        // GET: User  
+
         public ActionResult Index()
-        {            
+        {
             return View();
         }
 
+        [HttpGet]
         public ActionResult Login()
         {
             return View();
         }
 
-        //public ActionResult Login(User userName)
-        //{
-        //    return View();
-        //}
+        [HttpPost]
+        public ActionResult Login(User user)
+        {
+            if (user.Name != null && user.Email != null)
+            {
+                Session["Name"] = user.Name.ToString();
+                return Redirect("User/Start");
+            }
+            return View();
+        }
+
+        public ActionResult Start()
+        {
+            return View();
+        }
     }
 }
