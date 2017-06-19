@@ -2236,48 +2236,88 @@ textarea.input-lg {
 .btn-default {
     color: #ffffff;
     background-color: black;
-    border-color: #cccccc;
-    border: 3px solid #2a6496;
+    border: 5px solid #00B4F1;
     /*border-color:cornflowerblue;*/
     width: 50%;
     font-weight: bold;
 }
 
-    .btn-default:hover,
-    .btn-default:focus,
-    .btn-default:active,
-    .btn-default.active,
-    .open .dropdown-toggle.btn-default {
-        color: white;
-        /*background-color: #ebebeb;*/
-        background-color: darkorange;
-        border-color: #adadad;
-    }
+.tips {
+    overflow: hidden;
+    width: 100%
+}
 
-    .btn-default:active,
-    .btn-default.active,
-    .open .dropdown-toggle.btn-default {
-        background-image: none;
-    }
+/*.box1 {
+    white-space: nowrap
+}
 
-    .btn-default.disabled,
-    .btn-default[disabled],
-    fieldset[disabled] .btn-default,
-    .btn-default.disabled:hover,
-    .btn-default[disabled]:hover,
-    fieldset[disabled] .btn-default:hover,
-    .btn-default.disabled:focus,
-    .btn-default[disabled]:focus,
-    fieldset[disabled] .btn-default:focus,
-    .btn-default.disabled:active,
-    .btn-default[disabled]:active,
-    fieldset[disabled] .btn-default:active,
-    .btn-default.disabled.active,
-    .btn-default[disabled].active,
-    fieldset[disabled] .btn-default.active {
-        background-color: #ffffff;
-        border-color: #cccccc;
-    }
+    .box1 div {
+        width: 10em;
+        height: 7em;
+        display: inline-block;
+        border: 4px solid black;
+        border-color: #428bca
+    }*/
+
+.questions {
+    width: 100%;
+    background: black;
+    margin-top: 10px;
+    padding: 50px;
+    padding-right: 50%;
+    border: solid 5px #00B4F1;
+    float: left;
+}
+
+.title-logo {
+    width: 100%;
+    height: 15em;
+}
+
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    text-align: center;
+}
+
+.btn-default:hover,
+.btn-default:focus,
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    color: white;
+    /*background-color: #ebebeb;*/
+    background-color: darkorange;
+    border-color: #00B4F1;
+}
+
+.btn-default:active,
+.btn-default.active,
+.open .dropdown-toggle.btn-default {
+    background-image: none;
+}
+
+.btn-default.disabled,
+.btn-default[disabled],
+fieldset[disabled] .btn-default,
+.btn-default.disabled:hover,
+.btn-default[disabled]:hover,
+fieldset[disabled] .btn-default:hover,
+.btn-default.disabled:focus,
+.btn-default[disabled]:focus,
+fieldset[disabled] .btn-default:focus,
+.btn-default.disabled:active,
+.btn-default[disabled]:active,
+fieldset[disabled] .btn-default:active,
+.btn-default.disabled.active,
+.btn-default[disabled].active,
+fieldset[disabled] .btn-default.active {
+    background-color: #ffffff;
+    border-color: #cccccc;
+}
 
 .btn-primary {
     color: #ffffff;
@@ -6407,29 +6447,50 @@ button.close {
         text-shadow: none;
     }
 
-@media screen and (min-width: 768px) {
-    .carousel-control .icon-prev,
-    .carousel-control .icon-next {
-        width: 30px;
-        height: 30px;
-        margin-top: -15px;
-        margin-left: -15px;
-        font-size: 30px;
-    }
-
-    .carousel-caption {
-        right: 20%;
-        left: 20%;
-        padding-bottom: 30px;
-    }
-
-    .carousel-indicators {
-        bottom: 20px;
-    }
+.fifty {
+    background-image: url(Images/50-50.png);
+    width: 8.2em;
+    height: 5.1em;
+    border-radius: 8em/5em;
 }
 
-.clearfix:before,
-.clearfix:after {
+.team {
+    background-image: url(Images/audience.png);
+    width: 8.2em;
+    height: 5.1em;
+    border-radius: 8em/5em;
+}
+
+.call {
+    background-image: url(Images/phone.png);
+    width: 8.2em;
+    height: 5.4em;
+    border-radius: 7.5em/5em;
+
+    @media screen and (min-width: 768px) {
+        .carousel-control .icon-prev,
+        .carousel-control .icon-next {
+            width: 30px;
+            height: 30px;
+            margin-top: -15px;
+            margin-left: -15px;
+            font-size: 30px;
+        }
+
+        .carousel-caption {
+            right: 20%;
+            left: 20%;
+            padding-bottom: 30px;
+        }
+
+        .carousel-indicators {
+            bottom: 20px;
+        }
+    }
+
+    .clearfix:before, .clearfix:after
+
+{
     display: table;
     content: " ";
 }

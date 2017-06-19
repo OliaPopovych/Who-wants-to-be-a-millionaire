@@ -166,8 +166,13 @@
     <Content Include="Content\Audio\stufe_3.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\50-50.png" />
+    <Content Include="Content\Images\audience.png" />
     <Content Include="Content\Images\millionaire01.jpg" />
+    <Content Include="Content\Images\millionaire02a.jpg" />
     <Content Include="Content\Images\Millionaire_Background.png" />
+    <Content Include="Content\Images\phone.png" />
+    <Content Include="Content\Images\Who-Wants-To-Be-A-Millionaire.jpeg" />
     <Content Include="Content\Images\WWTBAM-UK-Current-Logo.jpg" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
