@@ -5,25 +5,55 @@
 }
 
 <audio src="~/Content/Audio/stufe_1.mp3" autoplay="autoplay" loop="loop"> </audio>
-<h2>Hello @Session["Name"].ToString()</h2>
+<div>
+    <h2 class="info">Hello @Session["Name"].ToString()</h2>
+    <h2 class="clock">@DateTime.Now.Date.ToString("d")</h2>
+</div>
+
 <div class="tips">
     <input type="submit" value=" " class="btn btn-default fifty" />
     <input type="submit" value=" " class="btn btn-default team" />
     <input type="submit" value=" " class="btn btn-default call" />
 </div>
 
-<div class="title-logo"> </div>
+<div class="title-logo"></div>
+<div class="earn-money">
+    <div class="money save-money">&nbsp &nbsp 15 &nbsp  $ 1 000 000</div>
+    <div class="money">&nbsp &nbsp 14 &nbsp $ 500 000</div>
+    <div class="money">&nbsp &nbsp 13 &nbsp $ 250 000</div>
+    <div class="money">&nbsp &nbsp 12 &nbsp $ 125 000</div>
+    <div class="money">&nbsp &nbsp 11 &nbsp $ 64 000</div>
+    <div class="money save-money">&nbsp &nbsp 10 &nbsp $ 32 000</div>
+    <div class="money">&nbsp &nbsp 9 &nbsp &nbsp $ 16 000</div>
+    <div class="money">&nbsp &nbsp 8 &nbsp &nbsp $ 8 000</div>
+    <div class="money">&nbsp &nbsp 7 &nbsp &nbsp $ 4 000</div>
+    <div class="money">&nbsp &nbsp 6 &nbsp &nbsp $ 2 000</div>
+    <div class="money save-money">&nbsp &nbsp 5 &nbsp &nbsp $ 1 000</div>
+    <div class="money">&nbsp &nbsp 4 &nbsp &nbsp $ 500</div>
+    <div class="money">&nbsp &nbsp 3 &nbsp &nbsp $ 300</div>
+    <div class="money money-2">&nbsp &nbsp 2 &nbsp &nbsp $ 200</div>
+    <div class="money money-1">&nbsp &nbsp 1 &nbsp &nbsp $ 100</div>
+</div>
+
 <div class="form-group">
     <div class="questions">
-        Here will be questions
+        <span>Here will be questions</span>
     </div>
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="First answer" class="btn btn-default" />
-        <input type="submit" value="Second answer" class="btn btn-default" />
-    </div>
-    <div class="col-md-offset-2 col-md-10">
-        <input type="submit" value="Third answer" class="btn btn-default" />
-        <input type="submit" value="Fourth answer" class="btn btn-default" />
+
+    <div class="answers">
+        <div class="top-block ">
+            <input type="submit" value="A:" class="btn btn-default first-ans" />
+            <input type="submit" value="B:" class="btn btn-default second-ans" />
+        </div>
+        <div class="bottom-block ">
+            <input type="submit" value="C:" class="btn btn-default third-ans" />
+            <input type="submit" value="D:" class="btn btn-default fourth-ans" />
+        </div>
     </div>
 </div>
+
+
+
+
+
 

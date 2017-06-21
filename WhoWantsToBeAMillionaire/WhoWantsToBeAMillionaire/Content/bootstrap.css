@@ -1935,7 +1935,9 @@ textarea.form-control {
 }
 
 .form-group {
+    width: 80%;
     margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 .radio,
@@ -2238,7 +2240,7 @@ textarea.input-lg {
     background-color: black;
     border: 5px solid #00B4F1;
     /*border-color:cornflowerblue;*/
-    width: 50%;
+    width: 100%;
     font-weight: bold;
 }
 
@@ -2259,19 +2261,12 @@ textarea.input-lg {
         border-color: #428bca
     }*/
 
-.questions {
-    width: 100%;
-    background: black;
-    margin-top: 10px;
-    padding: 50px;
-    padding-right: 50%;
-    border: solid 5px #00B4F1;
-    float: left;
-}
-
 .title-logo {
-    width: 100%;
-    height: 15em;
+    margin-top: 10px;
+    background-image: url('Images/3D studio 1080 2.jpg6bb6073c-fba9-42c2-b01e-6e611c71d216Original.jpg');
+    background-repeat: round;
+    width: 80%;
+    height: 20em;
 }
 
 .footer {
@@ -2281,6 +2276,14 @@ textarea.input-lg {
     left: 0;
     padding: 1rem;
     text-align: center;
+}
+
+.info {
+    float: left;
+}
+
+.clock {
+    float: right;
 }
 
 .btn-default:hover,
@@ -6466,31 +6469,120 @@ button.close {
     width: 8.2em;
     height: 5.4em;
     border-radius: 7.5em/5em;
+}
 
-    @media screen and (min-width: 768px) {
-        .carousel-control .icon-prev,
-        .carousel-control .icon-next {
-            width: 30px;
-            height: 30px;
-            margin-top: -15px;
-            margin-left: -15px;
-            font-size: 30px;
-        }
+.questions {
+    float: left;
+    width: 100%;
+    height: auto;
+    background: black;
+    padding: 3em;
+    border: solid 5px #00B4F1;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+}
 
-        .carousel-caption {
-            right: 20%;
-            left: 20%;
-            padding-bottom: 30px;
-        }
+.answers {
+    width: 100%;
+    margin-top: 5px;
+}
 
-        .carousel-indicators {
-            bottom: 20px;
-        }
+.top-block {
+    width: 100%;
+    height: 10em;
+    margin-top: 5px;
+}
+
+.bottom-block {
+    height: 7em;
+    width: 100%;
+    margin-top: 5px;
+}
+
+.earn-money {
+    width: 19%;
+    position: relative;
+    margin-top: -280px;
+    float: right;
+    height: 533px;
+    background-image: url(Images/WWTBAM-worldwide-background-2007-1.jpg);
+    background-repeat: round;
+    border: solid 5px #00B4F1;
+}
+
+.money {
+    color: gold;
+    margin-top: 5px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 19px;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+}
+
+/*.money-1 {
+    background-color:orange;
+    color:black;*/
+}
+
+.save-money {
+    color: white;
+}
+
+.first-ans {
+    margin-top: 12px;
+    margin-left: 80px;
+    width: 100%;
+    height: 3em;
+    float: left;
+}
+
+.second-ans {
+    margin-top: 12px;
+    margin-right: 80px;
+    width: 100%;
+    height: 3em;
+    float: right
+}
+
+.third-ans {
+    margin-top: 12px;
+    margin-left: 80px;
+    width: 100%;
+    height: 3em;
+    float: left
+}
+
+.fourth-ans {
+    margin-top: 12px;
+    margin-right: 80px;
+    width: 100%;
+    height: 3em;
+    float: right
+}
+
+@media screen and (min-width: 768px) {
+    .carousel-control .icon-prev,
+    .carousel-control .icon-next {
+        width: 30px;
+        height: 30px;
+        margin-top: -15px;
+        margin-left: -15px;
+        font-size: 30px;
     }
 
-    .clearfix:before, .clearfix:after
+    .carousel-caption {
+        right: 20%;
+        left: 20%;
+        padding-bottom: 30px;
+    }
 
-{
+    .carousel-indicators {
+        bottom: 20px;
+    }
+}
+
+.clearfix:before, .clearfix:after {
     display: table;
     content: " ";
 }
