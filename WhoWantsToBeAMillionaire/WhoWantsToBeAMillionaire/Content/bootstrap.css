@@ -6520,14 +6520,10 @@ button.close {
     font-stretch: ultra-expanded;
 }
 
-/*.money-1 {
-    background-color:orange;
-    color:black;*/
-}
 
-.save-money {
+/*.save-money {
     color: white;
-}
+}*/
 
 .first-ans {
     margin-top: 12px;
@@ -6559,6 +6555,13 @@ button.close {
     width: 100%;
     height: 3em;
     float: right
+}
+
+.top-text {
+    margin: 20px;
+    font-weight: bold;
+    font-stretch: ultra-expanded;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 @media screen and (min-width: 768px) {

@@ -97,11 +97,7 @@ if (!jQuery) { throw new Error("Bootstrap requires jQuery") }
  * limitations under the License.
  * ======================================================================== */
 
-var ans = true;
 
-if (ans) {
-    var x = document.getElementsByClassName("money-1");
-}
 
 +function ($) {
     "use strict";

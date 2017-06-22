@@ -159,11 +159,18 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Audio\50_50.mp3" />
+    <Content Include="Content\Audio\auswahlrunde_kandidatwahl_2.mp3" />
+    <Content Include="Content\Audio\falsch_kein_gewinn.mp3" />
     <Content Include="Content\Audio\intro.mp3" />
     <Content Include="Content\Audio\kompetenzjoker.mp3" />
+    <Content Include="Content\Audio\outro.mp3" />
+    <Content Include="Content\Audio\richtig_stufe_1.mp3" />
     <Content Include="Content\Audio\stufe_1.mp3" />
     <Content Include="Content\Audio\stufe_2.mp3" />
     <Content Include="Content\Audio\stufe_3.mp3" />
+    <Content Include="Content\Audio\telefonjoker_anruf.mp3" />
+    <Content Include="Content\Audio\wechsel_nach_stufe_3.mp3" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Images\3D studio 1080 2.jpg6bb6073c-fba9-42c2-b01e-6e611c71d216Original.jpg" />
