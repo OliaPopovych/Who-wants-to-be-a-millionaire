@@ -1,9 +1,8 @@
-﻿@model WhoWantsToBeAMillionaire.Models.User
-
+﻿@using WhoWantsToBeAMillionaire.ViewModels
+@model StartViewModel
 @{
     ViewBag.Title = "Start";
 }
-
 <audio src="~/Content/Audio/stufe_1.mp3" autoplay="autoplay" loop="loop"> </audio>
 <div>
     <h2 class="info">Hello @Session["Name"].ToString()</h2>
@@ -11,49 +10,89 @@
 </div>
 
 <div class="tips">
-    <input type="submit" value=" " class="btn btn-default fifty" />
-    <input type="submit" value=" " class="btn btn-default team" />
-    <input type="submit" value=" " class="btn btn-default call" />
+    <input type="submit" id="sbmtFifty" value=" " class="btn btn-default fifty" />
+    <input type="submit" id="sbmtTeam" value=" " class="btn btn-default team" />
+    <input type="submit" id="sbmtCall" value=" " class="btn btn-default call" />
 </div>
-
-<div class="title-logo"></div>
+<div class="title-logo"> </div>
 <div class="earn-money">
-    <div class="money save-money">&nbsp &nbsp 15 &nbsp  $ 1 000 000</div>
-    <div class="money">&nbsp &nbsp 14 &nbsp $ 500 000</div>
-    <div class="money">&nbsp &nbsp 13 &nbsp $ 250 000</div>
-    <div class="money">&nbsp &nbsp 12 &nbsp $ 125 000</div>
-    <div class="money">&nbsp &nbsp 11 &nbsp $ 64 000</div>
-    <div class="money save-money">&nbsp &nbsp 10 &nbsp $ 32 000</div>
-    <div class="money">&nbsp &nbsp 9 &nbsp &nbsp $ 16 000</div>
-    <div class="money">&nbsp &nbsp 8 &nbsp &nbsp $ 8 000</div>
-    <div class="money">&nbsp &nbsp 7 &nbsp &nbsp $ 4 000</div>
-    <div class="money">&nbsp &nbsp 6 &nbsp &nbsp $ 2 000</div>
-    <div class="money save-money">&nbsp &nbsp 5 &nbsp &nbsp $ 1 000</div>
-    <div class="money">&nbsp &nbsp 4 &nbsp &nbsp $ 500</div>
-    <div class="money">&nbsp &nbsp 3 &nbsp &nbsp $ 300</div>
-    <div class="money money-2">&nbsp &nbsp 2 &nbsp &nbsp $ 200</div>
-    <div class="money money-1">&nbsp &nbsp 1 &nbsp &nbsp $ 100</div>
+    <div class="money save-money">&nbsp &nbsp 15 &nbsp &diams; &nbsp $ 1 000 000</div>
+    <div class="money">&nbsp &nbsp 14 &nbsp &diams; &nbsp $ 500 000</div>
+    <div class="money">&nbsp &nbsp 13 &nbsp &diams; &nbsp $ 250 000</div>
+    <div class="money">&nbsp &nbsp 12 &nbsp &diams; &nbsp $ 125 000</div>
+    <div class="money">&nbsp &nbsp 11 &nbsp &diams; &nbsp $ 64 000</div>
+    <div class="money save-money">&nbsp &nbsp 10 &nbsp &diams;  &nbsp $ 32 000</div>
+    <div class="money">&nbsp &nbsp 9 &nbsp &nbsp &diams; &nbsp $ 16 000</div>
+    <div class="money">&nbsp &nbsp 8 &nbsp &nbsp &diams; &nbsp $ 8 000</div>
+    <div class="money">&nbsp &nbsp 7 &nbsp &nbsp &diams; &nbsp $ 4 000</div>
+    <div class="money">&nbsp &nbsp 6 &nbsp &nbsp &diams; &nbsp $ 2 000</div>
+    <div class="money save-money">&nbsp &nbsp 5 &nbsp &nbsp &diams; &nbsp $ 1 000</div>
+    <div class="money">&nbsp &nbsp 4 &nbsp &nbsp &diams; &nbsp $ 500</div>
+    <div class="money">&nbsp &nbsp 3 &nbsp &nbsp &diams; &nbsp $ 300</div>
+    <div class="money money-2">&nbsp &nbsp 2 &nbsp &nbsp &diams; &nbsp $ 200</div>
+    <div class="money money-1">&nbsp &nbsp 1 &nbsp &nbsp &diams; &nbsp $ 100</div>
 </div>
-
 <div class="form-group">
     <div class="questions">
-        <span>Here will be questions</span>
+        @Model.Question.Text
     </div>
 
-    <div class="answers">
-        <div class="top-block ">
-            <input type="submit" value="A:" class="btn btn-default first-ans" />
-            <input type="submit" value="B:" class="btn btn-default second-ans" />
+    @using (Html.BeginForm("Start", "User", "FormMethod.Post"))
+    {
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="FirstAnswer" id=0 value="@Model.Question.Answers[0].Text" class="btn btn-default" />
+            <input type="submit" name="SecondAnswer" id=1 value="@Model.Question.Answers[1].Text" class="btn btn-default" />
         </div>
-        <div class="bottom-block ">
-            <input type="submit" value="C:" class="btn btn-default third-ans" />
-            <input type="submit" value="D:" class="btn btn-default fourth-ans" />
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="ThirdAnswer" id=2 value="@Model.Question.Answers[2].Text" class="btn btn-default" />
+            <input type="submit" name="FourthAnswer" id=3 value="@Model.Question.Answers[3].Text" class="btn btn-default" />
         </div>
-    </div>
+    }
 </div>
 
+<script>
+    $('[class="btn btn-default"]').on("click", function () {
+        $.ajax({
+            url: '/User/Start/?id=' + $(this).attr('id'),
+            type: "POST",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                window.location = response;
+            },
+            error: function (jqXHR, status, err) {
 
+            },
+            complete: function (jqXHR, status) {
 
-
-
+            }
+        });
+    });
+</script>
+<script>
+    $("#sbmtFifty").on("click", function () {
+        $.ajax({
+            url: '/User/GetFifty/',
+            type: "POST",
+            beforeSend: function () {
+            },
+            success: function (response) {
+                var answ = response;
+                var number;
+                $('[class="btn btn-default"]').each(function (index, item) {
+                    if ($(item).attr('id') != answ) {
+                        $(item).prop('disabled', true);
+                    }
+                });
+                while ((number = Math.floor(Math.random() * 4)) == answ);
+                $('[id="' + number + '"]').prop('disabled', false);
+                $("#sbmtFifty").prop('disabled', true);
+            },
+            error: function (jqXHR, status, err) {
+            },
+            complete: function (jqXHR, status) {
+            }
+        });
+    });
+</script>
 

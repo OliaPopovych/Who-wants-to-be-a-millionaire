@@ -1328,7 +1328,7 @@ pre {
 
     .col-md-offset-2 {
         margin-left: 16.666666666666664%;
-        margin-top: 5%;
+        margin-top: 2%;
         /*background-image:url("Images/Millionaire_Background.png")*/
     }
 
@@ -4478,6 +4478,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
     margin: 7.5px -15px;
+    font-size:20px;
 }
 
     .navbar-nav > li > a {
@@ -6478,7 +6479,7 @@ button.close {
     background: black;
     padding: 3em;
     border: solid 5px #00B4F1;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
@@ -6501,6 +6502,7 @@ button.close {
 }
 
 .earn-money {
+    padding-top:10px;
     width: 19%;
     position: relative;
     margin-top: -280px;
@@ -6521,9 +6523,9 @@ button.close {
 }
 
 
-/*.save-money {
+.save-money {
     color: white;
-}*/
+}
 
 .first-ans {
     margin-top: 12px;
@@ -6557,11 +6559,9 @@ button.close {
     float: right
 }
 
-.top-text {
-    margin: 20px;
-    font-weight: bold;
-    font-stretch: ultra-expanded;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.money-1{
+    background-color:orange;
+    color:black;
 }
 
 @media screen and (min-width: 768px) {

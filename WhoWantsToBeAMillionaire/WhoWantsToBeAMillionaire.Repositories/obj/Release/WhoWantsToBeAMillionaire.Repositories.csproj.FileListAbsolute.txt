@@ -1,0 +1,5 @@
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Release\WhoWantsToBeAMillionaire.Repositories.dll.config
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Release\WhoWantsToBeAMillionaire.Repositories.dll
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Release\WhoWantsToBeAMillionaire.Repositories.pdb
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Release\WhoWantsToBeAMillionaire.Repositories.dll
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Release\WhoWantsToBeAMillionaire.Repositories.pdb
