@@ -27,10 +27,10 @@
     <div class="money">&nbsp &nbsp 7 &nbsp &nbsp &diams; &nbsp $ 4 000</div>
     <div class="money">&nbsp &nbsp 6 &nbsp &nbsp &diams; &nbsp $ 2 000</div>
     <div class="money save-money">&nbsp &nbsp 5 &nbsp &nbsp &diams; &nbsp $ 1 000</div>
-    <div class="money">&nbsp &nbsp 4 &nbsp &nbsp &diams; &nbsp $ 500</div>
-    <div class="money">&nbsp &nbsp 3 &nbsp &nbsp &diams; &nbsp $ 300</div>
-    <div class="money money-2">&nbsp &nbsp 2 &nbsp &nbsp &diams; &nbsp $ 200</div>
-    <div class="money money-1">&nbsp &nbsp 1 &nbsp &nbsp &diams; &nbsp $ 100</div>
+    <div class="money" id="money-4">&nbsp &nbsp 4 &nbsp &nbsp &diams; &nbsp $ 500</div>
+    <div class="money" id="money-3">&nbsp &nbsp 3 &nbsp &nbsp &diams; &nbsp $ 300</div>
+    <div class="money" id="money-2">&nbsp &nbsp 2 &nbsp &nbsp &diams; &nbsp $ 200</div>
+    <div class="money" id="money-1">&nbsp &nbsp 1 &nbsp &nbsp &diams; &nbsp $ 100</div>
 </div>
 <div class="form-group">
     <div class="questions">
@@ -40,15 +40,25 @@
     @using (Html.BeginForm("Start", "User", "FormMethod.Post"))
     {
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" name="FirstAnswer" id=0 value="@Model.Question.Answers[0].Text" class="btn btn-default" />
-            <input type="submit" name="SecondAnswer" id=1 value="@Model.Question.Answers[1].Text" class="btn btn-default" />
+            <input type="submit" name="FirstAnswer" id=0 value="A: @Model.Question.Answers[0].Text" class="btn btn-default" />
+            <input type="submit" name="SecondAnswer" id=1 value="B: @Model.Question.Answers[1].Text" class="btn btn-default" />
         </div>
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" name="ThirdAnswer" id=2 value="@Model.Question.Answers[2].Text" class="btn btn-default" />
-            <input type="submit" name="FourthAnswer" id=3 value="@Model.Question.Answers[3].Text" class="btn btn-default" />
+            <input type="submit" name="ThirdAnswer" id=2 value="C: @Model.Question.Answers[2].Text" class="btn btn-default" />
+            <input type="submit" name="FourthAnswer" id=3 value="D: @Model.Question.Answers[3].Text" class="btn btn-default" />
         </div>
     }
 </div>
+
+
+@*<script>
+        function myFunction() {
+            document.getElementById("money-1").style.backgroundColor = "orange";
+            document.getElementById("money-1").style.color = "black";
+        }
+    </script>*@
+
+
 
 <script>
     $('[class="btn btn-default"]').on("click", function () {
