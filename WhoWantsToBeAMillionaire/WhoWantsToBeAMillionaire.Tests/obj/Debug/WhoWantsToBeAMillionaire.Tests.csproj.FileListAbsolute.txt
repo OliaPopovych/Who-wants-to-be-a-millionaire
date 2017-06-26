@@ -54,3 +54,7 @@ C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionair
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\obj\Debug\WhoWantsToBeAMillionaire.Tests.pdb
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\bin\Debug\EntityFramework.dll
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\bin\Debug\EntityFramework.xml
+D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\obj\Debug\WhoWantsToBeAMillionaire.Tests.csprojResolveAssemblyReference.cache
+C:\Users\omedetc\Downloads\Who-wants-to-be-a-millionaire-backend\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\obj\Debug\WhoWantsToBeAMillionaire.Tests.csprojResolveAssemblyReference.cache
+C:\Users\Oleh\Desktop\C#\EPAM Courses\FirstMillion\Who-wants-to-be-a-millionaire-backend(changed)\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\obj\Debug\WhoWantsToBeAMillionaire.Tests.csprojResolveAssemblyReference.cache
+C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Tests\obj\Debug\WhoWantsToBeAMillionaire.Tests.csprojResolveAssemblyReference.cache

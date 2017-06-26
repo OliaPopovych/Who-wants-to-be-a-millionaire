@@ -1328,7 +1328,7 @@ pre {
 
     .col-md-offset-2 {
         margin-left: 16.666666666666664%;
-        margin-top: 5%;
+        margin-top: 2%;
         /*background-image:url("Images/Millionaire_Background.png")*/
     }
 
@@ -4478,6 +4478,7 @@ textarea.input-group-sm > .input-group-btn > .btn {
 
 .navbar-nav {
     margin: 7.5px -15px;
+    font-size: 20px;
 }
 
     .navbar-nav > li > a {
@@ -6478,7 +6479,7 @@ button.close {
     background: black;
     padding: 3em;
     border: solid 5px #00B4F1;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: bold;
     text-align: center;
 }
@@ -6501,6 +6502,7 @@ button.close {
 }
 
 .earn-money {
+    padding-top: 10px;
     width: 19%;
     position: relative;
     margin-top: -280px;
@@ -6520,10 +6522,12 @@ button.close {
     font-stretch: ultra-expanded;
 }
 
-
-/*.save-money {
+.save-money {
     color: white;
-}*/
+}
+
+#money-1 {
+}
 
 .first-ans {
     margin-top: 12px;
@@ -6557,11 +6561,46 @@ button.close {
     float: right
 }
 
-.top-text {
-    margin: 20px;
-    font-weight: bold;
-    font-stretch: ultra-expanded;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+.money-1 {
+    background-color: orange;
+    color: black;
+}
+
+.title-game-over {
+    margin: auto;
+    margin-left: 15%;
+    margin-top: 5%;
+    width: 50%;
+    border: 3px solid green;
+    padding: 50px;
+    text-align: center;
+}
+
+.statistic {
+    position: relative;
+    float: right;
+    margin-top: -420px;
+    margin-right: -20%;
+    width: 40%;
+    height: 700px;
+    /*border-left: solid;*/
+    /*border-top: solid;*/
+    border: solid;
+}
+
+.winning {
+    padding-left: 12%;
+    width: 50%;
+    height: 150px;
+    float: left;
+    margin-left: 15%;
+    margin-top: 10%;
+    border: solid;
+}
+
+.btn-new-game {
+    margin-top: 170px;
+    margin-left: 28%;
 }
 
 @media screen and (min-width: 768px) {
