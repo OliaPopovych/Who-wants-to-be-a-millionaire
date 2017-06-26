@@ -210,6 +210,7 @@
     <Content Include="Views\User\Login.cshtml" />
     <Content Include="Views\User\Start.cshtml" />
     <Content Include="Views\User\GameOver.cshtml" />
+    <Content Include="Views\User\Statistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\WhoWantsToBeAMillionaire.Repositories\WhoWantsToBeAMillionaire.Repositories.csproj">

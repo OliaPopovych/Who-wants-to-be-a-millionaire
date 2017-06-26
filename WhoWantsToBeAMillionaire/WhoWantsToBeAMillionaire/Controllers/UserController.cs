@@ -59,6 +59,12 @@ namespace WhoWantsToBeAMillionaire.Controllers
             return View();
         }
 
+        [HttpGet]
+        public ActionResult Statistics()
+        {
+            return View();
+        }
+
         [HttpPost]
         public ActionResult Start(string id)
         {
