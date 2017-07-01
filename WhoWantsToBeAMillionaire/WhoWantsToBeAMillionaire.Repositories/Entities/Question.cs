@@ -9,5 +9,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
         public string Text { get; set; }
         [XmlElement("Answers")]
         public List<Answer> Answers { get; set; }
+        [XmlIgnore]
+        public int RightAnswerId { get; set; }
     }
 }

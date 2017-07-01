@@ -1,8 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Mvc;
 using WhoWantsToBeAMillionaire.Models;
-using WhoWantsToBeAMillionaire.Repositories;
 using WhoWantsToBeAMillionaire.Services;
 using WhoWantsToBeAMillionaire.ViewModels;
 
@@ -20,8 +18,8 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         static UserController()
         {
+            service = new Service("~/App_Data/questions.xml");
             model = new StartViewModel();
-
         }
 
         [HttpGet]
@@ -48,8 +46,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
             {
                 return Redirect("Login");
             }
-            //model.FiftyButtonDisabl = Session[]
-            model.Question = questionsList[i];
+            model.Question = service.QuestionsList[i];
             return View("Start", model);
         }
 
@@ -68,13 +65,13 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public ActionResult Start(string id)
         {
-            if (i > questionsList.Count) {
+            if (i > service.QuestionsList.Count) {
                 return Content(Url.Action("GameOver", "User"));
             }
-            model.Question = questionsList[i];
+            model.Question = service.QuestionsList[i];
             if (!String.IsNullOrEmpty(id))
             {
-                if (int.Parse(id) == true)
+                if (int.Parse(id) == model.Question.RightAnswerId)
                 {
                     i++;
                     return Content(Url.Action("Start", "User"));
@@ -90,16 +87,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public int GetFifty()
         { 
-            for (int num = 0; num < questionsList[i].Answers.Count; num++)
-            {
-                if (questionsList[i].Answers[num].isTrue == true)
-                {
-                    Session["FiftyButtonDisabl"] = "true";
-                    // model.FiftyButtonDisabl = "true";
-                    return num;
-                }
-            }
-            return -1;
+            return service.GetFifty(model.Question);
         }
     }
 }
