@@ -5,17 +5,17 @@ using System.Xml.Serialization;
 
 namespace WhoWantsToBeAMillionaire.Repositories
 {
-    public class XmlQuestionRepository : IRepository<Question>
+    public class XmlQuestionRepository : IQuestionRepository
     {
         private string fileName;
-        List<Question> list;
+        private List<Question> list;
 
-        public XmlQuestionRepository()
+        public XmlQuestionRepository(string path)
         {
-            fileName = HttpContext.Current.Server.MapPath("~/App_Data/questions.xml");
+            fileName = HttpContext.Current.Server.MapPath(path);
         }
 
-        public IEnumerable<Question> GetAll()
+        public IList<Question> GetAll()
         {
             try
             {

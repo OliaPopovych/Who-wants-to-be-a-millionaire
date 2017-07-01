@@ -212,6 +212,10 @@
     <Content Include="Views\User\GameOver.cshtml" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Services\WhoWantsToBeAMillionaire.Services.csproj">
+      <Project>{ED3FF2E7-7F93-47E4-9614-71F729819EEC}</Project>
+      <Name>WhoWantsToBeAMillionaire.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WhoWantsToBeAMillionaire.Repositories\WhoWantsToBeAMillionaire.Repositories.csproj">
       <Project>{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}</Project>
       <Name>WhoWantsToBeAMillionaire.Repositories</Name>

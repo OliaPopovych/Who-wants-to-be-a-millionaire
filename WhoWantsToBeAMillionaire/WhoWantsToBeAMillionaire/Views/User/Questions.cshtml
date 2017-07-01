@@ -1,0 +1,17 @@
+﻿<div class="form-group">
+    <div class="questions">
+        @Model.Question.Text
+    </div>
+
+    @using (Html.BeginForm("Start", "User", "FormMethod.Post"))
+    {
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="FirstAnswer" id=0 value="@Model.Question.Answers[0].Text" class="btn btn-default" />
+            <input type="submit" name="SecondAnswer" id=1 value="@Model.Question.Answers[1].Text" class="btn btn-default" />
+        </div>
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" name="ThirdAnswer" id=2 value="@Model.Question.Answers[2].Text" class="btn btn-default" />
+            <input type="submit" name="FourthAnswer" id=3 value="@Model.Question.Answers[3].Text" class="btn btn-default" />
+        </div>
+    }
+</div>

@@ -3,22 +3,26 @@ using System.Collections.Generic;
 using System.Web.Mvc;
 using WhoWantsToBeAMillionaire.Models;
 using WhoWantsToBeAMillionaire.Repositories;
+using WhoWantsToBeAMillionaire.Services;
 using WhoWantsToBeAMillionaire.ViewModels;
 
 namespace WhoWantsToBeAMillionaire.Controllers
 {
     public class UserController : Controller
     {
-        IRepository<Question> repository;
-        List<Question> questionsList;
-        StartViewModel model = new StartViewModel();
+        static IService service;
+        static StartViewModel model;
         static int i = 0;
 
         public UserController()
         {
-            repository = new XmlQuestionRepository();
-            questionsList = new List<Question>(repository.GetAll());
         }  
+
+        static UserController()
+        {
+            model = new StartViewModel();
+
+        }
 
         [HttpGet]
         public ActionResult Index()
@@ -32,17 +36,19 @@ namespace WhoWantsToBeAMillionaire.Controllers
             if (user.Name != null && user.Email != null)
             {
                 Session["Name"] = user.Name.ToString();
+                Session["FiftyButtonDisabl"] = "false";
                 return Redirect("User/Start");
             }
             return View();
         }
 
-        public ActionResult Start()
+        public ActionResult Start(StartViewModel model)
         {
             if(Session.Keys.Count == 0)
             {
                 return Redirect("Login");
             }
+            //model.FiftyButtonDisabl = Session[]
             model.Question = questionsList[i];
             return View("Start", model);
         }
@@ -68,7 +74,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
             model.Question = questionsList[i];
             if (!String.IsNullOrEmpty(id))
             {
-                if (model.Question.Answers[int.Parse(id)].isTrue == true)
+                if (int.Parse(id) == true)
                 {
                     i++;
                     return Content(Url.Action("Start", "User"));
@@ -83,11 +89,13 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         [HttpPost]
         public int GetFifty()
-        {
-            for(int num = 0; num < questionsList[i].Answers.Count; num++)
+        { 
+            for (int num = 0; num < questionsList[i].Answers.Count; num++)
             {
                 if (questionsList[i].Answers[num].isTrue == true)
                 {
+                    Session["FiftyButtonDisabl"] = "true";
+                    // model.FiftyButtonDisabl = "true";
                     return num;
                 }
             }

@@ -1,13 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26430.6
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire", "WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.csproj", "{3E964ECB-CC1C-446E-ABF0-E02F7E771BCD}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Tests", "WhoWantsToBeAMillionaire.Tests\WhoWantsToBeAMillionaire.Tests.csproj", "{A9F27B00-FCC9-4949-B78A-A244201F7D63}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Repositories", "WhoWantsToBeAMillionaire.Repositories\WhoWantsToBeAMillionaire.Repositories.csproj", "{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Services", "Services\WhoWantsToBeAMillionaire.Services.csproj", "{ED3FF2E7-7F93-47E4-9614-71F729819EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ED3FF2E7-7F93-47E4-9614-71F729819EEC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ED3FF2E7-7F93-47E4-9614-71F729819EEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ED3FF2E7-7F93-47E4-9614-71F729819EEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ED3FF2E7-7F93-47E4-9614-71F729819EEC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
