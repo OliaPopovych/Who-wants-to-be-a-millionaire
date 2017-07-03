@@ -17,5 +17,22 @@ namespace WhoWantsToBeAMillionaire.Repositories
         public int RightAnswerId { get; set; }
         [XmlIgnore]
         public virtual StatisticsEntry StatisticEntry { get; set; }
+
+        public Question()
+        {
+            Answers = new List<Answer>();
+        }
+
+        public bool IsAnswersListEmpty()
+        {
+            foreach(var item in Answers)
+            {
+                if(item.TimesSelected != 0)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
     }
 }

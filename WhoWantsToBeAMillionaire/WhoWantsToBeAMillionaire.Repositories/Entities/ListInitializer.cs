@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace WhoWantsToBeAMillionaire.Repositories.Entities
 {
-    public class ListInitializer : DropCreateDatabaseAlways<MillionaireContext>
+    public class ListInitializer : DropCreateDatabaseIfModelChanges<MillionaireContext>
     {
         private List<Question> questionList;
 
