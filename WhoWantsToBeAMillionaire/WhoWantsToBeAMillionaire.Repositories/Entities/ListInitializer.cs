@@ -3,7 +3,7 @@ using System.Data.Entity;
 
 namespace WhoWantsToBeAMillionaire.Repositories.Entities
 {
-    public class ListInitializer : DropCreateDatabaseIfModelChanges<MillionaireContext>
+    public class ListInitializer : DropCreateDatabaseAlways<MillionaireContext>
     {
         private List<Question> questionList;
 
@@ -14,6 +14,10 @@ namespace WhoWantsToBeAMillionaire.Repositories.Entities
 
         protected override void Seed(MillionaireContext context)
         {
+            for (int i = 0; i < questionList.Count; i++)
+            {
+                questionList[i].QuestionID = 0;
+            }
             foreach(var item in questionList)
             {
                 context.Statistics.Add(new StatisticsEntry(item));

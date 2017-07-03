@@ -24,6 +24,10 @@ namespace WhoWantsToBeAMillionaire.Repositories.Entities
         public StatisticsEntry()
         {
             CountList = new List<int>(new int[4]);
+            CountList[0] = CountOnFirstAnswer;
+            CountList[1] = CountOnSecondAnswer;
+            CountList[2] = CountOnThirdAnswer;
+            CountList[3] = CountOnFourthAnswer;
         }
         public void CountAnswersForQuestion(int answerId)
         {
@@ -47,8 +51,7 @@ namespace WhoWantsToBeAMillionaire.Repositories.Entities
                     break;
                 default:
                     break;
-            }
-                
+            }     
         }
     }
 }

@@ -73,7 +73,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
             {
                 if (context.Statistics.Any(s => s.QuestionID == question.QuestionID))
                 {
-                    return context.Statistics.Where(s => s.Question.QuestionID == question.QuestionID).FirstOrDefault();
+                    return context.Statistics.Where(s => s.Question.QuestionID == question.QuestionID).Include(s=>s.Question).FirstOrDefault();
                 }
                 else
                 {
