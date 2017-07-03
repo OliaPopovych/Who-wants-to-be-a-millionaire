@@ -365,3 +365,5 @@ D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\M
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.csprojResolveAssemblyReference.cache
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.dll
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\WhoWantsToBeAMillionaire.Services.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\WhoWantsToBeAMillionaire.Services.pdb

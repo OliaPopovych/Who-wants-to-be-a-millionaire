@@ -83,16 +83,13 @@
             },
             success: function (response) {
                 var answ = response;
-                var number;
                 $('[class="btn btn-default"]').each(function (index, item) {
-                    if ($(item).attr('id') != answ) {
+                    if ($(item).attr('id') != "@Model.Question.RightAnswerId.ToString()") {
                         $(item).prop('disabled', true);
                     }
                 });
-                while ((number = Math.floor(Math.random() * 4)) == answ);
-                $('[id="' + number + '"]').prop('disabled', false);
+                $('[id="' + answ + '"]').prop('disabled', false);
                 $("#sbmtFifty").prop('disabled', "@Session["FiftyButtonDisabl"].ToString()");
-                // $("#sbmtFifty").prop('disabled', true);
             },
             error: function (jqXHR, status, err) {
             },

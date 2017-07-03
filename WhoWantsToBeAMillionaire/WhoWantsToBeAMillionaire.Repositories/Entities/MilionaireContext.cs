@@ -1,19 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WhoWantsToBeAMillionaire.Repositories.Entities
 {
-    public class MilionaireContext : DbContext
+    public class MillionaireContext : DbContext
     {
-        public MilionaireContext() : base("name=MilionaireDBConnectionString")
+        public MillionaireContext(List<Question> list) : base("name=MillionaireDBConnectionString")
         {
-
+            Database.SetInitializer<MillionaireContext>(new ListInitializer(list));
+        }
+        public MillionaireContext() : base("name=MillionaireDBConnectionString")
+        {
         }
         public DbSet<StatisticsEntry> Statistics { get; set; }
         public DbSet<User> UsersRating { get; set; }
+        public DbSet<Question> Questions { get; set; }
+        public DbSet<Answer> Answers { get; set; }
     }
 }

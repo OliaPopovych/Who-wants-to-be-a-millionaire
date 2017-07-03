@@ -1,71 +1,85 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using WhoWantsToBeAMillionaire.Repositories.Entities;
 
 namespace WhoWantsToBeAMillionaire.Repositories
 {
-    public class DbStatisticsRepository : IQuestionStatisticRepository, IDisposable
+    public class DbStatisticsRepository : IQuestionStatisticRepository
     {
-        private readonly MilionaireContext context;
-        private bool disposed;
-
-        public DbStatisticsRepository(MilionaireContext context)
+        public void SeedDatabase(bool force, List<Question> list)
         {
-            this.context = context;
-        }
-
-        public void Dispose(bool disposing)
-        {
-            if (!disposed)
+            using (var context = new MillionaireContext(list))
             {
-                if (disposing)
-                {
-                    context.Dispose();
-                }
+                context.Database.Initialize(force);
             }
-
-             disposed = true;
-        }
-
-        public void Dispose()
-        {
-            Dispose(true);
-            GC.SuppressFinalize(this);
         }
 
         public IList<StatisticsEntry> GetAll()
         {
-            return context.Set<StatisticsEntry>().ToList();
+            using(var context = new MillionaireContext())
+            {
+                return context.Set<StatisticsEntry>().ToList();
+            }  
         }
 
         public StatisticsEntry GetById(int id)
         {
-            return context.Set<StatisticsEntry>().Where(s => s.EntryID == id).FirstOrDefault();
+            using (var context = new MillionaireContext())
+            {
+                return context.Set<StatisticsEntry>().Where(s => s.QuestionID == id).FirstOrDefault();
+            }
         }
 
         public void Add(StatisticsEntry entry)
         {
-            context.Entry(entry).State = EntityState.Added;
-            context.SaveChanges();
+            using (var context = new MillionaireContext())
+            {
+                context.Entry(entry).State = EntityState.Added;
+            }
+
         }
 
         public void Delete(StatisticsEntry entry)
         {
-            context.Entry(entry).State = EntityState.Deleted;
-            context.SaveChanges();
+            using (var context = new MillionaireContext())
+            {
+                context.Entry(entry).State = EntityState.Deleted;
+            }
         }
 
         public void Update(StatisticsEntry entry)
         {
-            context.Entry(entry).State = EntityState.Modified;
-            context.SaveChanges();
+            using (var context = new MillionaireContext())
+            {
+                var oldEntry = context.Statistics.Where(e => e.QuestionID == entry.QuestionID).FirstOrDefault();
+                context.Entry(oldEntry).CurrentValues.SetValues(entry);
+                // context.Entry(oldEntry).State = EntityState.Modified;
+                context.SaveChanges();
+            }
+        }
+
+        public void SaveChanges()
+        {
+            using (var context = new MillionaireContext())
+            {
+                context.SaveChanges();
+            }
         }
 
         public StatisticsEntry GetByQuestion(Question question)
         {
-            return context.Set<StatisticsEntry>().Where(s => s.Question == question).FirstOrDefault();
+            using (var context = new MillionaireContext())
+            {
+                if (context.Statistics.Any(s => s.QuestionID == question.QuestionID))
+                {
+                    return context.Statistics.Where(s => s.Question.QuestionID == question.QuestionID).FirstOrDefault();
+                }
+                else
+                {
+                    return null;
+                }
+            }
         }
     }
 }

@@ -1,0 +1,12 @@
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\WhoWantsToBeAMillionaire.Services.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\WhoWantsToBeAMillionaire.Services.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\EntityFramework.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\EntityFramework.xml
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\obj\Debug\WhoWantsToBeAMillionaire.Services.csprojResolveAssemblyReference.cache
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\obj\Debug\WhoWantsToBeAMillionaire.Services.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\obj\Debug\WhoWantsToBeAMillionaire.Services.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\WhoWantsToBeAMillionaire.Services.dll.config
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\Services\bin\Debug\EntityFramework.SqlServer.xml

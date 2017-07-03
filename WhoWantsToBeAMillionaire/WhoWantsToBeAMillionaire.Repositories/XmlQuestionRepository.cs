@@ -26,6 +26,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
                     list = (List<Question>)serializer.Deserialize(reader);
                 }
                 FillRightAnswerFields();
+                FillIdFields();
                 return list;
             }
             catch (FileNotFoundException ex)
@@ -52,6 +53,14 @@ namespace WhoWantsToBeAMillionaire.Repositories
                 }
             }
             return -1;
+        }
+
+        private void FillIdFields()
+        {
+            for(int i = 1; i < list.Count; i++)
+            {
+                list[i - 1].QuestionID = i;
+            }
         }
     }
 }

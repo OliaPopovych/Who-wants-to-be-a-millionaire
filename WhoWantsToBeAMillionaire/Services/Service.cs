@@ -10,15 +10,35 @@ namespace WhoWantsToBeAMillionaire.Services
         private readonly IQuestionStatisticRepository statisticRepository;
         private readonly IUserRatingRepository userRepository;
         private readonly IQuestionRepository questionRepository;
-        public List<Question> QuestionsList { get; set; }
         private static Random rand = new Random();
+        private List<Question> questionsList;
+        public List<Question> QuestionsList
+        {
+            get
+            {
+                if (questionsList == null)
+                {
+                    questionsList = new List<Question>(questionRepository.GetAll());
+                }
+                return questionsList;
+            }
+            set
+            {
+                questionsList = value;
+            }
+        }
 
         public Service(string questionSource)
         {
-            statisticRepository = new DbStatisticsRepository(new MilionaireContext());
-            userRepository = new DbUserRatingRepository(new MilionaireContext());
             questionRepository = new XmlQuestionRepository(questionSource);
-            QuestionsList = new List<Question>(questionRepository.GetAll());
+            statisticRepository = new DbStatisticsRepository();
+            userRepository = new DbUserRatingRepository();
+            SeedDataBase();           
+        }
+
+        private void SeedDataBase()
+        {
+            statisticRepository.SeedDatabase(false, QuestionsList);
         }
 
         public void LogAnswer(Question question, int answerId)
@@ -27,7 +47,7 @@ namespace WhoWantsToBeAMillionaire.Services
 
             if (entry != null)
             {
-                entry.CountAnswersForQuestion[answerId] += 1;
+                entry.CountAnswersForQuestion(answerId);
                 statisticRepository.Update(entry);
             }
             else
@@ -39,7 +59,7 @@ namespace WhoWantsToBeAMillionaire.Services
         private int GetRandomOption(Question question)
         {
             int numb;
-            while ((numb = rand.Next(0, 3)) != question.RightAnswerId);
+            while ((numb = rand.Next(0, 3)) == question.RightAnswerId);
             return numb;
         }
 
@@ -48,18 +68,26 @@ namespace WhoWantsToBeAMillionaire.Services
             var entry = statisticRepository.GetByQuestion(question);
             if(entry != null)
             {
-                int minIndex = 0;
-                for(int i = 0; i < entry.CountAnswersForQuestion.Count; i++)
+                int minIndex, i;
+
+                if(question.RightAnswerId == 0)
+                {
+                    minIndex = 1;
+                    i = 2;
+                }
+                else
+                {
+                    minIndex = 0;
+                    i = 1;
+                }
+
+                for(; i < entry.CountList.Count; i++)
                 {
                     if(question.RightAnswerId == i)
                     {
-                        if(i == 0)
-                        {
-                            minIndex = 1;
-                        }
                         continue;
                     }
-                    if(entry.CountAnswersForQuestion[i] < entry.CountAnswersForQuestion[minIndex])
+                    if(entry.CountList[i] < entry.CountList[minIndex])
                     {
                         minIndex = i;
                     }
@@ -76,7 +104,7 @@ namespace WhoWantsToBeAMillionaire.Services
 
         public int GetFifty(Question question)
         {
-            if(statisticRepository.GetByQuestion(question) == null)
+            if(statisticRepository.GetByQuestion(question).CountList.Count == 0)
             {
                 return GetRandomOption(question);
             }

@@ -58,6 +58,7 @@
     <Compile Include="DbStatisticsRepository.cs" />
     <Compile Include="DbUserRatingRepository.cs" />
     <Compile Include="Entities\Answer.cs" />
+    <Compile Include="Entities\ListInitializer.cs" />
     <Compile Include="Entities\MilionaireContext.cs" />
     <Compile Include="Entities\StatisticsEntry.cs" />
     <Compile Include="Entities\User.cs" />

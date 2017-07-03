@@ -18,8 +18,9 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         static UserController()
         {
-            service = new Service("~/App_Data/questions.xml");
+            // service = new Service("~/App_Data/questions.xml");
             model = new StartViewModel();
+            service = new Service("~/App_Data/questions.xml");
         }
 
         [HttpGet]
@@ -73,11 +74,14 @@ namespace WhoWantsToBeAMillionaire.Controllers
             {
                 if (int.Parse(id) == model.Question.RightAnswerId)
                 {
+                    service.LogAnswer(model.Question, int.Parse(id));
                     i++;
                     return Content(Url.Action("Start", "User"));
                 }
                 else
                 {
+                    service.LogAnswer(model.Question, int.Parse(id));
+                    // service.AddUserToDataBase(Session["Name"].ToString(), int.Parse(Session["Sum"].ToString()));
                     return Content(Url.Action("GameOver", "User"));
                 }
             }
@@ -87,7 +91,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public int GetFifty()
         { 
-            return service.GetFifty(model.Question);
+            return service.GetFifty(service.QuestionsList[i]);
         }
     }
 }
