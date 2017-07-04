@@ -60,7 +60,6 @@
     <Compile Include="Entities\Answer.cs" />
     <Compile Include="Entities\ListInitializer.cs" />
     <Compile Include="Entities\MilionaireContext.cs" />
-    <Compile Include="Entities\StatisticsEntry.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="IQuestionRepository.cs" />
     <Compile Include="IQuestionStatisticRepository.cs" />

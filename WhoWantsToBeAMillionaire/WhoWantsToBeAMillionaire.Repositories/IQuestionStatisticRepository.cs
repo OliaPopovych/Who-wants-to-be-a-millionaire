@@ -3,11 +3,11 @@ using WhoWantsToBeAMillionaire.Repositories.Entities;
 
 namespace WhoWantsToBeAMillionaire.Repositories
 {
-    public interface IQuestionStatisticRepository : IBaseRepository<StatisticsEntry>
+    public interface IQuestionStatisticRepository : IBaseRepository<Question>
     {
         void SeedDatabase(bool force, List<Question> list);
-        void Update(StatisticsEntry entry);
+        void Update(Question entry);
         void SaveChanges();
-        StatisticsEntry GetByQuestion(Question question);
+        Question GetByQuestion(Question question);
     }
 }

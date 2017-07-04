@@ -22,10 +22,6 @@ namespace WhoWantsToBeAMillionaire.Services
                 }
                 return questionsList;
             }
-            set
-            {
-                questionsList = value;
-            }
         }
 
         public Service(string questionSource)
@@ -47,12 +43,12 @@ namespace WhoWantsToBeAMillionaire.Services
 
             if (entry != null)
             {
-                entry.Question.Answers[answerId].TimesSelected++;
+                entry.Answers[answerId].TimesSelected++;
                 statisticRepository.Update(entry);
             }
             else
             {
-                statisticRepository.Add(new StatisticsEntry(question));
+                statisticRepository.Add(new Question(question));
             }
         }
 
@@ -81,13 +77,13 @@ namespace WhoWantsToBeAMillionaire.Services
                     i = 1;
                 }
 
-                for(; i < entry.Question.Answers.Count; i++)
+                for(; i < entry.Answers.Count; i++)
                 {
                     if(question.RightAnswerId == i)
                     {
                         continue;
                     }
-                    if(entry.Question.Answers[i].TimesSelected < entry.Question.Answers[minIndex].TimesSelected)
+                    if(entry.Answers[i].TimesSelected < entry.Answers[minIndex].TimesSelected)
                     {
                         minIndex = i;
                     }
@@ -104,7 +100,7 @@ namespace WhoWantsToBeAMillionaire.Services
 
         public int GetFifty(Question question)
         {
-            if(statisticRepository.GetByQuestion(question).Question.IsAnswersListEmpty() == true)
+            if(statisticRepository.GetByQuestion(question).IsAnswersListEmpty() == true)
             {
                 return GetRandomOption(question);
             }

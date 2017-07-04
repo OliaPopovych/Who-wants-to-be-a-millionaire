@@ -9,7 +9,7 @@ namespace WhoWantsToBeAMillionaire.Services
 {
     public interface IService
     {
-        List<Question> QuestionsList { get; set; } 
+        List<Question> QuestionsList { get; } 
         void LogAnswer(Question question, int answerId);
         int GetFifty(Question question);
         void AddUserToDataBase(string name, int achivedSum);
