@@ -213,13 +213,13 @@
     <Content Include="Views\User\Statistics.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Services\WhoWantsToBeAMillionaire.Services.csproj">
-      <Project>{ED3FF2E7-7F93-47E4-9614-71F729819EEC}</Project>
-      <Name>WhoWantsToBeAMillionaire.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\WhoWantsToBeAMillionaire.Repositories\WhoWantsToBeAMillionaire.Repositories.csproj">
       <Project>{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}</Project>
       <Name>WhoWantsToBeAMillionaire.Repositories</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WhoWantsToBeAMillionaire.Services\WhoWantsToBeAMillionaire.Services.csproj">
+      <Project>{ed3ff2e7-7f93-47e4-9614-71f729819eec}</Project>
+      <Name>WhoWantsToBeAMillionaire.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

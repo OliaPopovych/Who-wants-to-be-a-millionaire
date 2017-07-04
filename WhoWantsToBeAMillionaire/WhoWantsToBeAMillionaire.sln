@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Te
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Repositories", "WhoWantsToBeAMillionaire.Repositories\WhoWantsToBeAMillionaire.Repositories.csproj", "{E9ED515B-C6E3-4903-B0CE-26D54131EAD5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Services", "Services\WhoWantsToBeAMillionaire.Services.csproj", "{ED3FF2E7-7F93-47E4-9614-71F729819EEC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WhoWantsToBeAMillionaire.Services", "WhoWantsToBeAMillionaire.Services\WhoWantsToBeAMillionaire.Services.csproj", "{ED3FF2E7-7F93-47E4-9614-71F729819EEC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
