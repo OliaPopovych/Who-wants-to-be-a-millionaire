@@ -3,28 +3,24 @@ using System.Data.Entity;
 
 namespace WhoWantsToBeAMillionaire.Repositories.Entities
 {
-    public class ListInitializer : DropCreateDatabaseAlways<MillionaireContext>
+    public class ListInitializer : DropCreateDatabaseIfModelChanges<MillionaireContext>
     {
-        private List<Question> questionList = new List<Question>();
+        private List<Question> questionList;
 
         public ListInitializer(List<Question> list)
         {
-            foreach(var item in list)
-            {
-                questionList.Add(item);
-            }
-            for (int i = 0; i < questionList.Count; i++)
-            {
-                questionList[i].QuestionID = 0;
-            }
+            questionList = list;
         }
 
         protected override void Seed(MillionaireContext context)
         {
-            
+            for (int i = 0; i < questionList.Count; i++)
+            {
+                questionList[i].QuestionID = 0;
+            }
             foreach(var item in questionList)
             {
-                context.Questions.Add(new Question(item));
+                context.Statistics.Add(new StatisticsEntry(item));
             }
             context.SaveChanges();
             base.Seed(context);

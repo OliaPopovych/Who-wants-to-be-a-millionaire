@@ -79,13 +79,13 @@ namespace WhoWantsToBeAMillionaire.Controllers
             {
                 if (int.Parse(id) == model.Question.RightAnswerId)
                 {
-                    service.LogAnswer(service.QuestionsList[i], int.Parse(id));
+                    service.LogAnswer(model.Question, int.Parse(id));
                     i++;
                     return Content(Url.Action("Start", "User"));
                 }
                 else
                 {
-                    service.LogAnswer(service.QuestionsList[i], int.Parse(id));
+                    service.LogAnswer(model.Question, int.Parse(id));
                     // service.AddUserToDataBase(Session["Name"].ToString(), int.Parse(Session["Sum"].ToString()));
                     return Content(Url.Action("GameOver", "User"));
                 }

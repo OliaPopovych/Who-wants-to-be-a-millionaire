@@ -15,23 +15,23 @@ namespace WhoWantsToBeAMillionaire.Repositories
             }
         }
 
-        public IList<Question> GetAll()
+        public IList<StatisticsEntry> GetAll()
         {
             using(var context = new MillionaireContext())
             {
-                return context.Set<Question>().ToList();
+                return context.Set<StatisticsEntry>().ToList();
             }  
         }
 
-        public Question GetById(int id)
+        public StatisticsEntry GetById(int id)
         {
             using (var context = new MillionaireContext())
             {
-                return context.Set<Question>().Where(s => s.QuestionID == id).FirstOrDefault();
+                return context.Set<StatisticsEntry>().Where(s => s.QuestionID == id).FirstOrDefault();
             }
         }
 
-        public void Add(Question entry)
+        public void Add(StatisticsEntry entry)
         {
             using (var context = new MillionaireContext())
             {
@@ -40,7 +40,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
 
         }
 
-        public void Delete(Question entry)
+        public void Delete(StatisticsEntry entry)
         {
             using (var context = new MillionaireContext())
             {
@@ -48,7 +48,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
             }
         }
 
-        public void Update(Question entry)
+        public void Update(StatisticsEntry entry)
         {
             using (var context = new MillionaireContext())
             {
@@ -57,7 +57,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
                 int i = 0;
                 foreach(var child in question.Answers)
                 {
-                    context.Entry(child).Entity.TimesSelected = entry.Answers[i++].TimesSelected;
+                    context.Entry(child).Entity.TimesSelected = entry.Question.Answers[i++].TimesSelected;
                     context.Entry(child).State = EntityState.Modified;
                 }
                 context.SaveChanges();
@@ -72,12 +72,19 @@ namespace WhoWantsToBeAMillionaire.Repositories
             }
         }
 
-        public Question GetByQuestion(Question question)
+        public StatisticsEntry GetByQuestion(Question question)
         {
             using (var context = new MillionaireContext())
             {
-                    return context.Questions.Where(q => q.QuestionID == question.QuestionID)
-                        .Include(q => q.Answers).FirstOrDefault();
+                if (context.Statistics.Any(s => s.QuestionID == question.QuestionID))
+                {
+                    return context.Statistics.Where(s => s.Question.QuestionID == question.QuestionID)
+                        .Include(s=>s.Question.Answers).FirstOrDefault();
+                }
+                else
+                {
+                    return null;
+                }
             }
         }
     }

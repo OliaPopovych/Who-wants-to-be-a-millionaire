@@ -15,17 +15,12 @@ namespace WhoWantsToBeAMillionaire.Repositories
         public List<Answer> Answers { get; set; }
         [XmlIgnore]
         public int RightAnswerId { get; set; }
+        [XmlIgnore]
+        public virtual StatisticsEntry StatisticEntry { get; set; }
 
         public Question()
         {
             Answers = new List<Answer>();
-        }
-
-        public Question(Question qestion)
-        {
-            Text = qestion.Text;
-            Answers = qestion.Answers;
-            RightAnswerId = qestion.RightAnswerId;
         }
 
         public bool IsAnswersListEmpty()
