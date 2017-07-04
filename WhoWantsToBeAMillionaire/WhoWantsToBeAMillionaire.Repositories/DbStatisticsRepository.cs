@@ -52,9 +52,14 @@ namespace WhoWantsToBeAMillionaire.Repositories
         {
             using (var context = new MillionaireContext())
             {
-                var oldEntry = context.Statistics.Where(e => e.QuestionID == entry.QuestionID).FirstOrDefault();
-                context.Entry(oldEntry).CurrentValues.SetValues(entry);
-                // context.Entry(oldEntry).State = EntityState.Modified;
+                var question = context.Questions.Where(q => q.QuestionID == entry.QuestionID)
+                    .Include(q => q.Answers).FirstOrDefault();
+                int i = 0;
+                foreach(var child in question.Answers)
+                {
+                    context.Entry(child).Entity.TimesSelected = entry.Question.Answers[i++].TimesSelected;
+                    context.Entry(child).State = EntityState.Modified;
+                }
                 context.SaveChanges();
             }
         }

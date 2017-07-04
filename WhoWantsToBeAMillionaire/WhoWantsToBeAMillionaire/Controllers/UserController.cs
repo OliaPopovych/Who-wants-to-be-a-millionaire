@@ -18,7 +18,6 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         static UserController()
         {
-            // service = new Service("~/App_Data/questions.xml");
             model = new StartViewModel();
             service = new Service("~/App_Data/questions.xml");
         }
@@ -32,7 +31,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public ActionResult Login(User user)
         { 
-            if (user.Name != null && user.Email != null)
+            if (user.Name != null)
             {
                 Session["Name"] = user.Name.ToString();
                 Session["FiftyButtonDisabl"] = "false";

@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Xml.Serialization;
 using WhoWantsToBeAMillionaire.Repositories.Entities;
 
@@ -15,7 +16,10 @@ namespace WhoWantsToBeAMillionaire.Repositories
         [XmlIgnore]
         public int TimesSelected { get; set; }
         [XmlIgnore]
-        public virtual StatisticsEntry StatisticEntry { get; set; }
+        [ForeignKey("Question")]
+        public int QuestionID { get; set; }
+        [XmlIgnore]
+        public virtual Question Question { get; set; }
 
         public Answer()
         {
