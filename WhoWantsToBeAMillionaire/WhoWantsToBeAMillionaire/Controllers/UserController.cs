@@ -1,24 +1,27 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Web.Mvc;
 using WhoWantsToBeAMillionaire.Models;
-using WhoWantsToBeAMillionaire.Repositories;
+using WhoWantsToBeAMillionaire.Services;
 using WhoWantsToBeAMillionaire.ViewModels;
 
 namespace WhoWantsToBeAMillionaire.Controllers
 {
     public class UserController : Controller
     {
-        IRepository<Question> repository;
-        List<Question> questionsList;
-        StartViewModel model = new StartViewModel();
+        static IService service;
+        static StartViewModel model;
         static int i = 0;
 
         public UserController()
         {
-            repository = new XmlQuestionRepository();
-            questionsList = new List<Question>(repository.GetAll());
         }  
+
+        static UserController()
+        {
+            // service = new Service("~/App_Data/questions.xml");
+            model = new StartViewModel();
+            service = new Service("~/App_Data/questions.xml");
+        }
 
         [HttpGet]
         public ActionResult Index()
@@ -32,18 +35,19 @@ namespace WhoWantsToBeAMillionaire.Controllers
             if (user.Name != null && user.Email != null)
             {
                 Session["Name"] = user.Name.ToString();
+                Session["FiftyButtonDisabl"] = "false";
                 return Redirect("User/Start");
             }
             return View();
         }
 
-        public ActionResult Start()
+        public ActionResult Start(StartViewModel model)
         {
             if(Session.Keys.Count == 0)
             {
                 return Redirect("Login");
             }
-            model.Question = questionsList[i];
+            model.Question = service.QuestionsList[i];
             return View("Start", model);
         }
 
@@ -68,19 +72,22 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public ActionResult Start(string id)
         {
-            if (i > questionsList.Count) {
+            if (i > service.QuestionsList.Count) {
                 return Content(Url.Action("GameOver", "User"));
             }
-            model.Question = questionsList[i];
+            model.Question = service.QuestionsList[i];
             if (!String.IsNullOrEmpty(id))
             {
-                if (model.Question.Answers[int.Parse(id)].isTrue == true)
+                if (int.Parse(id) == model.Question.RightAnswerId)
                 {
+                    service.LogAnswer(model.Question, int.Parse(id));
                     i++;
                     return Content(Url.Action("Start", "User"));
                 }
                 else
                 {
+                    service.LogAnswer(model.Question, int.Parse(id));
+                    // service.AddUserToDataBase(Session["Name"].ToString(), int.Parse(Session["Sum"].ToString()));
                     return Content(Url.Action("GameOver", "User"));
                 }
             }
@@ -89,15 +96,8 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         [HttpPost]
         public int GetFifty()
-        {
-            for(int num = 0; num < questionsList[i].Answers.Count; num++)
-            {
-                if (questionsList[i].Answers[num].isTrue == true)
-                {
-                    return num;
-                }
-            }
-            return -1;
+        { 
+            return service.GetFifty(service.QuestionsList[i]);
         }
     }
 }

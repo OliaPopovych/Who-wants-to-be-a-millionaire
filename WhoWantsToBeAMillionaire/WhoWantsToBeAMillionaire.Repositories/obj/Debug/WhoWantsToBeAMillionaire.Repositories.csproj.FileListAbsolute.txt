@@ -1,3 +1,4 @@
+C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.csprojResolveAssemblyReference.cache
 D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll.config
 D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll
 D:\MyGitProj\Milionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
@@ -18,8 +19,13 @@ C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionair
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.dll
 C:\Users\Oleh\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
-C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll.config
-C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll
-C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
-C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.dll
-C:\Users\omedetc\Source\Repos\Who-wants-to-be-a-millionaire\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll.config
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.csprojResolveAssemblyReference.cache
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\obj\Debug\WhoWantsToBeAMillionaire.Repositories.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\EntityFramework.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\EntityFramework.SqlServer.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\EntityFramework.xml
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire.Repositories\bin\Debug\EntityFramework.SqlServer.xml

@@ -5,17 +5,17 @@ using System.Xml.Serialization;
 
 namespace WhoWantsToBeAMillionaire.Repositories
 {
-    public class XmlQuestionRepository : IRepository<Question>
+    public class XmlQuestionRepository : IQuestionRepository
     {
         private string fileName;
-        List<Question> list;
+        private List<Question> list;
 
-        public XmlQuestionRepository()
+        public XmlQuestionRepository(string path)
         {
-            fileName = HttpContext.Current.Server.MapPath("~/App_Data/questions.xml");
+            fileName = HttpContext.Current.Server.MapPath(path);
         }
 
-        public IEnumerable<Question> GetAll()
+        public IList<Question> GetAll()
         {
             try
             {
@@ -25,11 +25,41 @@ namespace WhoWantsToBeAMillionaire.Repositories
                 {
                     list = (List<Question>)serializer.Deserialize(reader);
                 }
+                FillRightAnswerFields();
+                FillIdFields();
                 return list;
             }
             catch (FileNotFoundException ex)
             {
                 throw ex;
+            }
+        }
+
+        private void FillRightAnswerFields()
+        {
+            for(int i = 0; i < list.Count; i++)
+            {
+                list[i].RightAnswerId = GetRightAnswer(list[i]);
+            }
+        }
+
+        private int GetRightAnswer(Question question)
+        {
+            for (int i = 0; i < question.Answers.Count; i++)
+            {
+                if (question.Answers[i].isTrue == true)
+                {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        private void FillIdFields()
+        {
+            for(int i = 1; i < list.Count; i++)
+            {
+                list[i - 1].QuestionID = i;
             }
         }
     }
