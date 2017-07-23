@@ -116,7 +116,7 @@ namespace WhoWantsToBeAMillionaire.Services
 
         public string SendMail(string From, string To, string Text)
         {
-
+            return "success";
         }
     }
 }
