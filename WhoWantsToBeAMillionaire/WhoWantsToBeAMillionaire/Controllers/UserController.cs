@@ -98,5 +98,10 @@ namespace WhoWantsToBeAMillionaire.Controllers
         {
             return PartialView("EmailForm");
         }
+
+        public ActionResult SendMailClick(MailViewModel model)
+        {
+            return PartialView("MailSentSuccessfully");
+        }
     }
 }

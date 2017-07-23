@@ -113,5 +113,10 @@ namespace WhoWantsToBeAMillionaire.Services
                 return GetOptionFromStatistic(question);
             }
         }
+
+        public string SendMail(string From, string To, string Text)
+        {
+
+        }
     }
 }

@@ -19,7 +19,7 @@
 
 @*Hidden div for email dialog output*@
 <div id="emaildialog" title="Send Mail"
-     style="overflow: hidden;background-color: yellow;border-bottom-width: 100px">
+     style="overflow: hidden;background-color: gainsboro;border-color:darkslateblue">
 </div>
 
 @*Level panel*@
@@ -124,15 +124,16 @@
             function InitializeDialog($element) {
 
                 $element.dialog({
+                    modal: true,
                     autoOpen: false,
-                    width: 400,
+                    width: 600,
+                    height: 400,
                     resizable: true,
                     draggable: true,
-                    title: "Department Operation",
-                    model: true,
-                    show: 'slide',
-                    closeText: 'x',
-                    dialogClass: 'alert',
+                    location: 'center',
+                    title: "Send Mail To Friend",
+                    closeText: "X",
+                    dialogClass: "alert",
                     closeOnEscape: true,
                     open: function (event, ui) {
                         $element.load('/User/EmailDialog');
