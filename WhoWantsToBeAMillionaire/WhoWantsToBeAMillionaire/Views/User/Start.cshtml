@@ -8,16 +8,21 @@
     <h2 class="info">Hello @Session["Name"].ToString()</h2>
     <h2 class="clock">@DateTime.Now.Date.ToString("d")</h2>
 </div>
-<script>
 
-    $("#sbmtFifty").prop('disabled', "@Session["FiftyButtonDisabl"].ToString()");
-</script>
+@*Tips*@
 <div class="tips">
-    <input type="submit" id="sbmtFifty" value=" " class="btn btn-default fifty" />
+    <input type="submit" id="sbmtFifty" value=" " class="btn btn-default fifty" @(((bool)Session["FiftyButtonDisabl"] == true) ? "disabled" : "")/>
     <input type="submit" id="sbmtTeam" value=" " class="btn btn-default team" />
     <input type="submit" id="sbmtCall" value=" " class="btn btn-default call" />
 </div>
 
+
+@*Hidden div for email dialog output*@
+<div id="emaildialog" title="Send Mail"
+     style="overflow: hidden;background-color: yellow;border-bottom-width: 100px">
+</div>
+
+@*Level panel*@
 <div class="title-logo"> </div>
 <div class="earn-money">
     <div class="money save-money">&nbsp &nbsp 15 &nbsp &diams; &nbsp $ 1 000 000</div>
@@ -36,6 +41,8 @@
     <div class="money" id="money-2">&nbsp &nbsp 2 &nbsp &nbsp &diams; &nbsp $ 200</div>
     <div class="money" id="money-1">&nbsp &nbsp 1 &nbsp &nbsp &diams; &nbsp $ 100</div>
 </div>
+
+@*Question section*@
 <div class="form-group">
     <div class="questions">
         @Model.Question.Text
@@ -62,18 +69,15 @@
         }
     </script>*@
 
-
-
 <script>
     $('[class="btn btn-default"]').on("click", function () {
         $.ajax({
-            url: '/User/Start/?id=' + $(this).attr('id'),
+            url: '/User/AnswerSelected/?id=' + $(this).attr('id'),
             type: "POST",
             beforeSend: function () {
             },
             success: function (response) {
                 window.location = response;
-                $("#sbmtFifty").prop('disabled', "@Model.FiftyButtonDisabl");
             },
             error: function (jqXHR, status, err) {
 
@@ -106,6 +110,38 @@
             complete: function (jqXHR, status) {
             }
         });
+    });
+</script>
+
+
+<script>
+    $(document).ready(function () {    
+            $("#sbmtCall").on("click", function () {
+                InitializeDialog($("#emaildialog"));
+                $("#emaildialog").dialog("open");
+            });
+
+            function InitializeDialog($element) {
+
+                $element.dialog({
+                    autoOpen: false,
+                    width: 400,
+                    resizable: true,
+                    draggable: true,
+                    title: "Department Operation",
+                    model: true,
+                    show: 'slide',
+                    closeText: 'x',
+                    dialogClass: 'alert',
+                    closeOnEscape: true,
+                    open: function (event, ui) {
+                        $element.load('/User/EmailDialog');
+                    },
+                    close: function () {
+                        $(this).dialog("close");
+                    }
+                });
+            }
     });
 </script>
 

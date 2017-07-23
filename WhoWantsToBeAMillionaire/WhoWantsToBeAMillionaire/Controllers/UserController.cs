@@ -23,7 +23,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Login()
         {
             return View();
         }
@@ -34,7 +34,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
             if (user.Name != null)
             {
                 Session["Name"] = user.Name.ToString();
-                Session["FiftyButtonDisabl"] = "false";
+                Session["FiftyButtonDisabl"] = false;
                 return Redirect("User/Start");
             }
             return View();
@@ -51,12 +51,6 @@ namespace WhoWantsToBeAMillionaire.Controllers
         }
 
         [HttpGet]
-        public ActionResult Login()
-        {
-            return View();
-        }
-
-        [HttpGet]
         public ActionResult GameOver()
         {
             return View();
@@ -69,7 +63,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         }
 
         [HttpPost]
-        public ActionResult Start(string id)
+        public ActionResult AnswerSelected(string id)
         {
             if (i > service.QuestionsList.Count) {
                 return Content(Url.Action("GameOver", "User"));
@@ -95,8 +89,14 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         [HttpPost]
         public int GetFifty()
-        { 
+        {
+            Session["FiftyButtonDisabl"] = true;
             return service.GetFifty(service.QuestionsList[i]);
+        }
+
+        public ActionResult EmailDialog()
+        {
+            return PartialView("EmailForm");
         }
     }
 }

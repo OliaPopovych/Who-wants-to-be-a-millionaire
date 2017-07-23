@@ -367,3 +367,9 @@ D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\D
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\obj\Debug\WhoWantsToBeAMillionaire.pdb
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\WhoWantsToBeAMillionaire.Services.dll
 D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\WhoWantsToBeAMillionaire.Services.pdb
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.Helpers.resources.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.Mvc.resources.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.Razor.resources.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.WebPages.resources.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.WebPages.Deployment.resources.dll
+D:\MyGitProj\Milionaire2\WhoWantsToBeAMillionaire\WhoWantsToBeAMillionaire\bin\ru\System.Web.WebPages.Razor.resources.dll
