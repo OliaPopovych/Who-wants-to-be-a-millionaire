@@ -12,10 +12,9 @@
 @*Tips*@
 <div class="tips">
     <input type="submit" id="sbmtFifty" value=" " class="btn btn-default fifty" @(((bool)Session["FiftyButtonDisabl"] == true) ? "disabled" : "")/>
-    <input type="submit" id="sbmtTeam" value=" " class="btn btn-default team" />
-    <input type="submit" id="sbmtCall" value=" " class="btn btn-default call" />
+    <input type="submit" id="sbmtTeam" value=" " class="btn btn-default team" @(((bool)Session["TeamButtonDisabl"] == true) ? "disabled" : "") />
+    <input type="submit" id="sbmtCall" value=" " class="btn btn-default call" @(((bool)Session["CallButtonDisabl"] == true) ? "disabled" : "") />
 </div>
-
 
 @*Hidden div for email dialog output*@
 <div id="emaildialog" title="Send Mail"
@@ -144,5 +143,24 @@
                 });
             }
     });
+</script>
+
+<script>
+    $("#sbmtTeam").on("click", function () {
+        $.ajax({
+            url: '/User/GoogleRedirect/',
+            type: 'POST',
+            beforeSend: function(){
+            },
+            success: function (response) {
+                window.open(response, '_blank');
+            },
+            error: function (jqXHR, status, err) {
+            },
+            complete: function (jqXHR, status) {
+            },
+            async: false
+        })
+    })
 </script>
 

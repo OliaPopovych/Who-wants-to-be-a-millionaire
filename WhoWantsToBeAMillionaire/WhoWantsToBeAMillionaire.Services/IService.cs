@@ -14,5 +14,6 @@ namespace WhoWantsToBeAMillionaire.Services
         int GetFifty(Question question);
         void AddUserToDataBase(string name, int achivedSum);
         string SendMail(string From, string To, string Text);
+        string FormMailText(int id);
     }
 }

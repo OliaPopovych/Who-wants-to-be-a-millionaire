@@ -35,7 +35,9 @@ namespace WhoWantsToBeAMillionaire.Controllers
             {
                 Session["Name"] = user.Name.ToString();
                 Session["FiftyButtonDisabl"] = false;
-                return Redirect("User/Start");
+                Session["TeamButtonDisabl"] = false;
+                Session["CallButtonDisabl"] = false;
+                return Redirect("~/User/Start");
             }
             return View();
         }
@@ -96,12 +98,22 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         public ActionResult EmailDialog()
         {
-            return PartialView("EmailForm");
+            var mailModel = new MailViewModel();
+            mailModel.Text = service.FormMailText(i);
+            return PartialView("EmailForm", mailModel);
         }
 
-        public ActionResult SendMailClick(MailViewModel model)
+        public ActionResult SendMail(MailViewModel mailModel)
         {
+            Session["CallButtonDisabl"] = true;
+            model.Question = service.QuestionsList[i];
+            service.SendMail(mailModel.Sender, mailModel.Recipient, mailModel.Text);
             return PartialView("MailSentSuccessfully");
+        }
+        [HttpPost]
+        public string GoogleRedirect()
+        {
+            return Url.Action("https://www.google.com/search?q=" + service.QuestionsList[i].Text);
         }
     }
 }

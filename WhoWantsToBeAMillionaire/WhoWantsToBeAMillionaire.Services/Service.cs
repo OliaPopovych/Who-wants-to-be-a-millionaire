@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net;
+using System.Net.Mail;
+using System.Text;
 using WhoWantsToBeAMillionaire.Repositories;
 using WhoWantsToBeAMillionaire.Repositories.Entities;
 
@@ -12,6 +15,7 @@ namespace WhoWantsToBeAMillionaire.Services
         private readonly IQuestionRepository questionRepository;
         private static Random rand = new Random();
         private List<Question> questionsList;
+
         public List<Question> QuestionsList
         {
             get
@@ -116,7 +120,34 @@ namespace WhoWantsToBeAMillionaire.Services
 
         public string SendMail(string From, string To, string Text)
         {
+            var message = new MailMessage();
+            message.From = new MailAddress(From);
+            message.To.Add(To);
+            message.Body = Text;
+            message.Subject = "Millionaire game help";
+
+            using (var smtp = new SmtpClient())
+            {
+                smtp.Credentials = new NetworkCredential("usermail127@gmail.com", "12345qwe");
+                smtp.Host = "smtp.gmail.com";
+                smtp.Port = 587;
+                smtp.EnableSsl = true;
+                smtp.Send(message);
+            }
             return "success";
+        }
+
+        public string FormMailText(int id)
+        {
+            var temp = new StringBuilder();
+            temp.Append("Привіт) Допоможи з відповіддю\n");
+            temp.Append(questionsList[id].Text);
+            temp.Append("\nВаріанти:\n");
+            temp.Append(questionsList[id].Answers[0].Text + "\n");
+            temp.Append(questionsList[id].Answers[1].Text + "\n");
+            temp.Append(questionsList[id].Answers[2].Text + "\n");
+            temp.Append(questionsList[id].Answers[3].Text);
+            return temp.ToString();
         }
     }
 }

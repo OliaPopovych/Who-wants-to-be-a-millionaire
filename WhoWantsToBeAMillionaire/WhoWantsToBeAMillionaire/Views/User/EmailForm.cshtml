@@ -1,7 +1,7 @@
 ﻿@using WhoWantsToBeAMillionaire.ViewModels
 @model MailViewModel
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("SendMail", "User", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 
@@ -33,11 +33,3 @@
     </div>
 }
 
-<script>
-    $('#send-btn').on('click', function () {
-        $.ajax({
-            url: '/User/',
-            type: "POST"
-        })
-    })
-</script>

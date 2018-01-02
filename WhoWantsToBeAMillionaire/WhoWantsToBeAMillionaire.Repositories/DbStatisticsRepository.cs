@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using WhoWantsToBeAMillionaire.Repositories.Entities;
@@ -11,7 +12,14 @@ namespace WhoWantsToBeAMillionaire.Repositories
         {
             using (var context = new MillionaireContext(list))
             {
-                context.Database.Initialize(force);
+                try
+                {
+                    context.Database.Initialize(force);
+                }
+                catch (Exception ex)
+                {
+
+                }
             }
         }
 
