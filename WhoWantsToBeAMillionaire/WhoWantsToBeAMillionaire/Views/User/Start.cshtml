@@ -24,17 +24,17 @@
 @*Level panel*@
 <div class="title-logo"> </div>
 <div class="earn-money">
-    <div class="money save-money">&nbsp &nbsp 15 &nbsp &diams; &nbsp $ 1 000 000</div>
-    <div class="money">&nbsp &nbsp 14 &nbsp &diams; &nbsp $ 500 000</div>
-    <div class="money">&nbsp &nbsp 13 &nbsp &diams; &nbsp $ 250 000</div>
-    <div class="money">&nbsp &nbsp 12 &nbsp &diams; &nbsp $ 125 000</div>
-    <div class="money">&nbsp &nbsp 11 &nbsp &diams; &nbsp $ 64 000</div>
-    <div class="money save-money">&nbsp &nbsp 10 &nbsp &diams;  &nbsp $ 32 000</div>
-    <div class="money">&nbsp &nbsp 9 &nbsp &nbsp &diams; &nbsp $ 16 000</div>
-    <div class="money">&nbsp &nbsp 8 &nbsp &nbsp &diams; &nbsp $ 8 000</div>
-    <div class="money">&nbsp &nbsp 7 &nbsp &nbsp &diams; &nbsp $ 4 000</div>
-    <div class="money">&nbsp &nbsp 6 &nbsp &nbsp &diams; &nbsp $ 2 000</div>
-    <div class="money save-money">&nbsp &nbsp 5 &nbsp &nbsp &diams; &nbsp $ 1 000</div>
+    <div class="money save-money" id="money-15">&nbsp &nbsp 15 &nbsp &diams; &nbsp $ 1 000 000</div>
+    <div class="money" id="money-14">&nbsp &nbsp 14 &nbsp &diams; &nbsp $ 500 000</div>
+    <div class="money" id="money-13">&nbsp &nbsp 13 &nbsp &diams; &nbsp $ 250 000</div>
+    <div class="money" id="money-12">&nbsp &nbsp 12 &nbsp &diams; &nbsp $ 125 000</div>
+    <div class="money" id="money-11">&nbsp &nbsp 11 &nbsp &diams; &nbsp $ 64 000</div>
+    <div class="money save-money" id="money-10">&nbsp &nbsp 10 &nbsp &diams;  &nbsp $ 32 000</div>
+    <div class="money" id="money-9">&nbsp &nbsp 9 &nbsp &nbsp &diams; &nbsp $ 16 000</div>
+    <div class="money" id="money-8">&nbsp &nbsp 8 &nbsp &nbsp &diams; &nbsp $ 8 000</div>
+    <div class="money" id="money-7">&nbsp &nbsp 7 &nbsp &nbsp &diams; &nbsp $ 4 000</div>
+    <div class="money" id="money-6">&nbsp &nbsp 6 &nbsp &nbsp &diams; &nbsp $ 2 000</div>
+    <div class="money save-money" id="money-5">&nbsp &nbsp 5 &nbsp &nbsp &diams; &nbsp $ 1 000</div>
     <div class="money" id="money-4">&nbsp &nbsp 4 &nbsp &nbsp &diams; &nbsp $ 500</div>
     <div class="money" id="money-3">&nbsp &nbsp 3 &nbsp &nbsp &diams; &nbsp $ 300</div>
     <div class="money" id="money-2">&nbsp &nbsp 2 &nbsp &nbsp &diams; &nbsp $ 200</div>
@@ -47,7 +47,7 @@
         @Model.Question.Text
     </div>
 
-    @using (Html.BeginForm("Start", "User", "FormMethod.Post"))
+    @using (Html.BeginForm("Start", "User", FormMethod.Post))
     {
         <div class="col-md-offset-2 col-md-10">
             <input type="submit" name="FirstAnswer" id=0 value="A: @Model.Question.Answers[0].Text" class="btn btn-default" />
@@ -60,13 +60,11 @@
     }
 </div>
 
-
-@*<script>
-        function myFunction() {
-            document.getElementById("money-1").style.backgroundColor = "orange";
-            document.getElementById("money-1").style.color = "black";
-        }
-    </script>*@
+<script>
+    $(document).ready(function () {
+        document.getElementById("money-" + @Model.Question.QuestionID).style.backgroundColor = "orange";
+    })
+</script>
 
 <script>
     $('[class="btn btn-default"]').on("click", function () {
