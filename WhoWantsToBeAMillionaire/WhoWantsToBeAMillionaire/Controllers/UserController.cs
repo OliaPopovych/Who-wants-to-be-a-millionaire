@@ -108,12 +108,12 @@ namespace WhoWantsToBeAMillionaire.Controllers
             Session["CallButtonDisabl"] = true;
             model.Question = service.QuestionsList[i];
             service.SendMail(mailModel.Sender, mailModel.Recipient, mailModel.Text);
-            return PartialView("MailSentSuccessfully");
+            return Redirect("~/User/Start");
         }
         [HttpPost]
         public string GoogleRedirect()
         {
-            return Url.Action("https://www.google.com/search?q=" + service.QuestionsList[i].Text);
+            return "https://www.google.com/search?q=" + service.QuestionsList[i].Text;
         }
     }
 }

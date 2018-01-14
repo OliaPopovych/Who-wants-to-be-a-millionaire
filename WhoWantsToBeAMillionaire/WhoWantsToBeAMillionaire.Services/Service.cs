@@ -120,27 +120,33 @@ namespace WhoWantsToBeAMillionaire.Services
 
         public string SendMail(string From, string To, string Text)
         {
-            var message = new MailMessage();
-            message.From = new MailAddress(From);
-            message.To.Add(To);
-            message.Body = Text;
-            message.Subject = "Millionaire game help";
-
-            using (var smtp = new SmtpClient())
+            try
             {
-                smtp.Credentials = new NetworkCredential("usermail127@gmail.com", "12345qwe");
-                smtp.Host = "smtp.gmail.com";
-                smtp.Port = 587;
-                smtp.EnableSsl = true;
-                smtp.Send(message);
+                var message = new MailMessage();
+                message.From = new MailAddress(From);
+                message.To.Add(To);
+                message.Body = Text;
+                message.Subject = "Millionaire game help";
+
+                using (var smtp = new SmtpClient())
+                {
+                    smtp.Credentials = new NetworkCredential("usermail127@gmail.com", "12345qwe");
+                    smtp.Host = "smtp.gmail.com";
+                    smtp.Port = 587;
+                    smtp.EnableSsl = true;
+                    smtp.Send(message);
+                }
+                return "success";
+            } catch(Exception e)
+            {
+                return e.Message;
             }
-            return "success";
         }
 
         public string FormMailText(int id)
         {
             var temp = new StringBuilder();
-            temp.Append("Привіт) Допоможи з відповіддю\n");
+            temp.Append("Привіт. Допоможи з відповіддю\n");
             temp.Append(questionsList[id].Text);
             temp.Append("\nВаріанти:\n");
             temp.Append(questionsList[id].Answers[0].Text + "\n");

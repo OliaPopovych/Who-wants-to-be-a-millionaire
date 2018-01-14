@@ -4,12 +4,12 @@ namespace WhoWantsToBeAMillionaire.ViewModels
 {
     public class MailViewModel
     {
-        [Required]
-        [EmailAddress(ErrorMessage = "Email required")]
+        //[Required(ErrorMessage = "Sender is required")]
         public string Sender { get; set; }
-        [Required]
+        [Required(ErrorMessage = "Recipient is required")]
         public string Recipient { get; set; }
         [Required]
+        [DataType(DataType.MultilineText)]
         public string Text { get; set; }
     }
 }
