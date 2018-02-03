@@ -4,12 +4,8 @@
     ViewBag.Title = "GameOver";
 }
 
-<div class="title-game-over">
-    <h2>You lose or You Win</h2>
-</div>
-
 <div class="winning">
-    <h1>You won 1000000 $</h1>
+    <h1>You won @Session["AchievedSum"]</h1>
 </div>
 
 <input type="button" value="Play Again" onclick="location.href='http://localhost:56835/User/Start'" class="btn btn-default btn-new-game" />

@@ -26,9 +26,9 @@
     background-color: darkgrey;
 }
 
-.money {
+.money, .money save-money {
     background-color: black;
-    width: 100px;
+    width: 150px;
     height: 20px;
     margin-left: auto;
     margin-right: auto;

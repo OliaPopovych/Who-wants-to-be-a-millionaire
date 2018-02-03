@@ -65,8 +65,9 @@ namespace WhoWantsToBeAMillionaire.Controllers
         }
 
         [HttpPost]
-        public ActionResult AnswerSelected(string id)
+        public ActionResult AnswerSelected(string id, string sum)
         {
+            Session["AchievedSum"] = sum.Equals(String.Empty) ? "nothing" : sum;
             if (i > service.QuestionsList.Count) {
                 return Content(Url.Action("GameOver", "User"));
             }
@@ -98,6 +99,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         public ActionResult EmailDialog()
         {
+            Session["CallButtonDisabl"] = true;
             var mailModel = new MailViewModel();
             mailModel.Text = service.FormMailText(i);
             return PartialView("EmailForm", mailModel);
@@ -105,7 +107,6 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         public ActionResult SendMail(MailViewModel mailModel)
         {
-            Session["CallButtonDisabl"] = true;
             model.Question = service.QuestionsList[i];
             service.SendMail(mailModel.Sender, mailModel.Recipient, mailModel.Text);
             return Redirect("~/User/Start");
@@ -113,6 +114,7 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpPost]
         public string GoogleRedirect()
         {
+            Session["TeamButtonDisabl"] = true;
             return "https://www.google.com/search?q=" + service.QuestionsList[i].Text;
         }
     }
