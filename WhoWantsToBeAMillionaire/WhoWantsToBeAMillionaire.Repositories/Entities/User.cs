@@ -9,12 +9,16 @@ namespace WhoWantsToBeAMillionaire.Repositories.Entities
         [Key]
         public int UserID { get; set; }
         public string Name { get; set; }
-        public int Sum { get; set; }
+        public string Sum { get; set; }
 
-        public User(string name, int sum)
+        public User(string name, string sum)
         {
             Name = name;
             Sum = sum;
+        }
+
+        public User()
+        {
         }
     }
 }

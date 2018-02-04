@@ -101,9 +101,14 @@ namespace WhoWantsToBeAMillionaire.Services
             return -1;
         }
 
-        public void AddUserToDataBase(string name, int achivedSum)
+        public void AddUserToDataBase(string name, string achivedSum)
         {
             userRepository.Add(new User(name, achivedSum));
+        }
+
+        public IList<User> GetUsersList()
+        {
+            return userRepository.GetAll();
         }
 
         public int GetFifty(Question question)

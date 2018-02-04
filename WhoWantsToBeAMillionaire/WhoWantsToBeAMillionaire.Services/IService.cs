@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WhoWantsToBeAMillionaire.Repositories;
+using WhoWantsToBeAMillionaire.Repositories.Entities;
 
 namespace WhoWantsToBeAMillionaire.Services
 {
@@ -12,7 +13,8 @@ namespace WhoWantsToBeAMillionaire.Services
         List<Question> QuestionsList { get; set; } 
         void LogAnswer(Question question, int answerId);
         int GetFifty(Question question);
-        void AddUserToDataBase(string name, int achivedSum);
+        void AddUserToDataBase(string name, string achivedSum);
+        IList<User> GetUsersList();
         string SendMail(string From, string To, string Text);
         string FormMailText(int id);
     }
