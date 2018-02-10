@@ -16,7 +16,7 @@ namespace WhoWantsToBeAMillionaire.Repositories
                 {
                     context.Database.Initialize(force);
                 }
-                catch (Exception ex)
+                catch (Exception)
                 {
 
                 }

@@ -6,11 +6,14 @@ using WhoWantsToBeAMillionaire.ViewModels;
 
 namespace WhoWantsToBeAMillionaire.Controllers
 {
+    [HandleError(View = "Error")]
     public class UserController : Controller
     {
         static IService service;
         static StartViewModel model;
+        static StatisticsViewModel statsModel;
         static int i = 0;
+        private static readonly log4net.ILog _logger = log4net.LogManager.GetLogger(typeof(UserController));
 
         public UserController()
         {
@@ -18,13 +21,18 @@ namespace WhoWantsToBeAMillionaire.Controllers
 
         static UserController()
         {
+            _logger.Info("User controller is created");
             model = new StartViewModel();
+            statsModel = new StatisticsViewModel();
             service = new Service("~/App_Data/questions.xml");
         }
 
         [HttpGet]
         public ActionResult Login()
         {
+            model = new StartViewModel();
+            statsModel = new StatisticsViewModel();
+            i = 0;
             return View();
         }
 
@@ -55,13 +63,17 @@ namespace WhoWantsToBeAMillionaire.Controllers
         [HttpGet]
         public ActionResult GameOver()
         {
+            _logger.Info($"Adding user to db: name: {Session["Name"].ToString()}, sum: {Session["AchievedSum"].ToString()}");
+            service.AddUserToDataBase(Session["Name"].ToString(), Session["AchievedSum"].ToString());
+            Session.Abandon();
             return View();
         }
 
         [HttpGet]
         public ActionResult Statistics()
         {
-            return View();
+            statsModel.Users = service.GetUsersList();
+            return View(statsModel);
         }
 
         [HttpPost]
@@ -83,7 +95,6 @@ namespace WhoWantsToBeAMillionaire.Controllers
                 else
                 {
                     service.LogAnswer(model.Question, int.Parse(id));
-                    // service.AddUserToDataBase(Session["Name"].ToString(), int.Parse(Session["Sum"].ToString()));
                     return Content(Url.Action("GameOver", "User"));
                 }
             }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using WhoWantsToBeAMillionaire.Repositories.Entities;
@@ -28,7 +27,15 @@ namespace WhoWantsToBeAMillionaire.Repositories
         {
             using (var context = new MillionaireContext())
             {
-                context.Entry(user).State = EntityState.Added;
+                if (context.UsersRating.Any(u => u.Name == user.Name))
+                {
+                    var dbUser = context.UsersRating.Where(u => u.Name == user.Name).FirstOrDefault();
+                    dbUser.Sum = user.Sum;
+                    context.SaveChanges();
+                    return;
+                }
+                context.UsersRating.Add(user);
+                context.SaveChanges();
             }
         }
 
