@@ -5,7 +5,7 @@
 }
 <audio src="~/Content/Audio/stufe_1.mp3" autoplay="autoplay" loop="loop"> </audio>
 <div>
-    <h2 class="info">Hello @Session["Name"].ToString()</h2>
+    <h2 class="info">Hello @(Session["Name"] ?? "")</h2>
     <h2 class="clock">@DateTime.Now.Date.ToString("d")</h2>
 </div>
 
